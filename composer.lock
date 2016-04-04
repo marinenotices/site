@@ -1,0 +1,293 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "210ae5df4801b2f2ab3a05b9b77f16c6",
+    "content-hash": "3b05ce4b7e1856ca3bd91e0fd57f34d3",
+    "packages": [
+        {
+            "name": "composer/installers",
+            "version": "v1.0.23",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/installers.git",
+                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/installers/zipball/6213d900e92647831f7a406d5c530ea1f3d4360e",
+                "reference": "6213d900e92647831f7a406d5c530ea1f3d4360e",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "replace": {
+                "roundcube/plugin-installer": "*",
+                "shama/baton": "*"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev",
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Composer\\Installers\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Composer\\Installers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyle Robinson Young",
+                    "email": "kyle@dontkry.com",
+                    "homepage": "https://github.com/shama"
+                }
+            ],
+            "description": "A multi-framework Composer library installer",
+            "homepage": "http://composer.github.com/installers/",
+            "keywords": [
+                "Craft",
+                "Dolibarr",
+                "Hurad",
+                "MODX Evo",
+                "OXID",
+                "SMF",
+                "Thelia",
+                "WolfCMS",
+                "agl",
+                "aimeos",
+                "annotatecms",
+                "bitrix",
+                "cakephp",
+                "chef",
+                "codeigniter",
+                "concrete5",
+                "croogo",
+                "dokuwiki",
+                "drupal",
+                "elgg",
+                "fuelphp",
+                "grav",
+                "installer",
+                "joomla",
+                "kohana",
+                "laravel",
+                "lithium",
+                "magento",
+                "mako",
+                "mediawiki",
+                "modulework",
+                "moodle",
+                "phpbb",
+                "piwik",
+                "ppi",
+                "puppet",
+                "roundcube",
+                "shopware",
+                "silverstripe",
+                "symfony",
+                "typo3",
+                "wordpress",
+                "zend",
+                "zikula"
+            ],
+            "time": "2016-01-27 12:54:22"
+        },
+        {
+            "name": "psycle-wordpress-plugins/mail-options",
+            "version": "1.0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Psycle/wordpress-plugin-mail-options.git",
+                "reference": "dbe2f64e70fc6a90819c0c796cbe0b2426493da0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Psycle/wordpress-plugin-mail-options/zipball/dbe2f64e70fc6a90819c0c796cbe0b2426493da0",
+                "reference": "dbe2f64e70fc6a90819c0c796cbe0b2426493da0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "wordpress-muplugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2015-10-19 15:02:25"
+        },
+        {
+            "name": "psycle-wordpress/wordpress",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.psycle.com/psycle-wordpress/wordpress.git",
+                "reference": "0856776ddfe8d629d34d8c5b839f6eda87e9c21c"
+            },
+            "require": {
+                "psycle-wordpress-plugins/mail-options": "@stable",
+                "psycle-wordpress/wordpress-core-installer": "@stable",
+                "wordpress/wordpress": "*"
+            },
+            "type": "package",
+            "extra": {
+                "wordpress-install-dir": {
+                    "wordpress/wordpress": "wp",
+                    "psycle/wordpress": "wp"
+                },
+                "installer-paths": {
+                    "custom/mu-plugins/{$name}": [
+                        "type:wordpress-muplugin"
+                    ],
+                    "custom/plugins/{$name}/": [
+                        "type:wordpress-plugin"
+                    ],
+                    "custom/themes/{$name}/": [
+                        "type:wordpress-theme"
+                    ]
+                }
+            },
+            "authors": [
+                {
+                    "name": "Jim Robinson",
+                    "email": "james.robinson@psycle.com"
+                }
+            ],
+            "description": "Package to build wordpress with composer installation plugin",
+            "time": "2016-03-31 11:47:30"
+        },
+        {
+            "name": "psycle-wordpress/wordpress-core-installer",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.psycle.com/psycle-wordpress/wordpress-core-installer.git",
+                "reference": "97aeff79f6e2d29aae8c8c6b0b92298c57cd5551"
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "conflict": {
+                "composer/installers": "<1.0.6"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "psycle\\Composer\\WordPressCorePlugin"
+            },
+            "autoload": {
+                "psr-0": {
+                    "psycle\\Composer\\": "src/"
+                }
+            },
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "John P. Bloch",
+                    "email": "me@johnpbloch.com"
+                },
+                {
+                    "name": "James Robinson",
+                    "email": "james.robinson@psycle.com"
+                }
+            ],
+            "description": "A custom installer to handle deploying WordPress with composer",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2015-08-06 14:53:23"
+        },
+        {
+            "name": "wordpress/wordpress",
+            "version": "4.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WordPress/WordPress.git",
+                "reference": "4.4.2"
+            },
+            "type": "wordpress-core"
+        },
+        {
+            "name": "wpackagist-plugin/w3-total-cache",
+            "version": "0.9.4.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/w3-total-cache/",
+                "reference": "tags/0.9.4.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.4.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/w3-total-cache/"
+        },
+        {
+            "name": "wpackagist-theme/twentyeleven",
+            "version": "2.3",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentyeleven/",
+                "reference": "2.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentyeleven.2.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/twentyeleven/"
+        },
+        {
+            "name": "wpackagist-theme/twentyfifteen",
+            "version": "1.4",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentyfifteen/",
+                "reference": "1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentyfifteen.1.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/twentyfifteen/"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
