@@ -32,6 +32,7 @@ class MarineNotice {
         add_action('wp_enqueue_scripts', array($this, 'addScriptsAndStyles'));
         add_action('add_meta_boxes', array($this, 'addMetaBoxes'));
         add_action('save_post', array($this, 'saveLocations'));
+        add_action('do_feed_kml', array($this, 'kmlFeed'));
 
         add_shortcode('navionics', array($this, 'navionicsMapShortcode'));
     }
@@ -100,7 +101,7 @@ class MarineNotice {
                         navKey: 'Navionics_webapi_01136'
                     });
                     /*webapi.showSonarControl(true);*/
-                    webapi.loadKml('/?feed=geo_tag_kml', false);
+                    webapi.loadKml('/?feed=kml', false);
                 </script>";
     }
 
@@ -152,12 +153,10 @@ class MarineNotice {
 	}
 
     function saveLocations($post_id) {
-        error_log("1");
 		if (!isset($_POST['marinenotice-locations']) || !wp_verify_nonce($_POST['marinenotice-locations'], 'marinenotice-locations')) {
     		return $post_id;
   		}
 
-         error_log("2");
         if (!current_user_can('edit_post', $post_id)) {
             return $post_id;
         }
@@ -170,6 +169,10 @@ class MarineNotice {
 
   		foreach($_POST as $key => $value) {
             if (strpos($key, 'marinenotice-location') === FALSE) {
+                continue;
+            }
+
+            if ($value == "") {
                 continue;
             }
 
@@ -189,7 +192,7 @@ class MarineNotice {
                     $locations[$id]['long'] = $value;
                     break;
                 case 'delete':
-                    $locations[$id] = false;
+                    unset($locations[$id]);
                     break;
                 default:
                     continue;
@@ -198,4 +201,58 @@ class MarineNotice {
 
 		update_post_meta($post_id, "marinenotice-locations", serialize($locations));
     }
+
+    function kmlFeed() {
+		header('Content-Type: application/xml');
+
+	    echo '<?xml version="1.0" encoding="UTF-8"?>
+                <kml xmlns="http://earth.google.com/kml/2.2">
+                <Document>
+                    <name>' . get_option('post_geo_tag_kml_title') . '</name>
+                    <description><![CDATA[' . get_option('post_geo_tag_kml_description') . ']]></description>
+                    <Style id="style1">
+                        <IconStyle>
+                            <Icon>
+                                <href>http://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png</href>
+                            </Icon>
+                        </IconStyle>
+                    </Style>';
+
+	    $args = array(
+            'numberposts' => -1,
+            'post_status' => 'publish',
+            'post_type' => 'notice');
+
+	    $posts = get_posts($args);
+
+	    foreach($posts as $post) {
+            $data = get_post_meta($post->ID, "marinenotice-locations");
+
+            if (isset($data[0])) {
+                $locations = unserialize($data[0]);
+
+                $index = 1;
+                $count = count($locations);
+
+                foreach($locations as $location) {
+                    if ($location['lat'] == "" || $location['long'] == "") {
+                        continue;
+                    }
+
+                    echo "<Placemark>
+                            <name>" . $post->post_title . ($count > 1 ? " (" . $index . " of " . $count . ")" : "") . "</name>
+                            <description><![CDATA[For more information <a href='" . $post->guid . "'>click here</a>.  Source: " . get_the_author_meta( "display_name", $post->post_author ) . "]]></description>
+                            <styleUrl>#style1</styleUrl>
+                            <Point>
+                            <coordinates>" . $location['long'] . "," . $location['lat'] . "</coordinates>
+                            </Point>
+                        </Placemark>";
+
+                    $index++;
+                }
+            }
+	    }
+
+	    echo "</Document></kml>";
+	}
 }
