@@ -1,9 +1,7 @@
 {
     "require": {
         "psycle-wordpress/wordpress": "*",
-		"wpackagist-plugin/w3-total-cache": "*",
-		"wpackagist-theme/twentyeleven": "*",
-		"wpackagist-theme/twentyfifteen": "*"
+		"wpackagist-plugin/w3-total-cache": "*"
     },
     "extra": {
         "installer-paths": {

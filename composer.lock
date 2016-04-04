@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "210ae5df4801b2f2ab3a05b9b77f16c6",
-    "content-hash": "3b05ce4b7e1856ca3bd91e0fd57f34d3",
+    "hash": "fdea755104a2fe7205def75ead40b324",
+    "content-hash": "99d54edfb11013ef6ff6bd1477ce2ddf",
     "packages": [
         {
             "name": "composer/installers",
@@ -240,46 +240,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/w3-total-cache/"
-        },
-        {
-            "name": "wpackagist-theme/twentyeleven",
-            "version": "2.3",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentyeleven/",
-                "reference": "2.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyeleven.2.3.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentyeleven/"
-        },
-        {
-            "name": "wpackagist-theme/twentyfifteen",
-            "version": "1.4",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentyfifteen/",
-                "reference": "1.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyfifteen.1.4.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentyfifteen/"
         }
     ],
     "packages-dev": [],
