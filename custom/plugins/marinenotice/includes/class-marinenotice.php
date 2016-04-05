@@ -38,6 +38,8 @@ class MarineNotice {
         add_action('save_post', array($this, 'saveLocations'));
         add_action('do_feed_kml', array($this, 'kmlFeed'));
         add_action('wp_before_admin_bar_render', array($this, 'adminMenuBar'));
+        add_filter('wp_nav_menu_args', array($this, 'navMenuArgs'));
+
 
         add_shortcode('navionics', array($this, 'navionicsMapShortcode'));
     }
@@ -303,5 +305,15 @@ foreach($roles as $the_role) {
             $wp_admin_bar->remove_menu('site-name');
             $wp_admin_bar->remove_menu('new-content');
         }
+    }
+
+    function navMenuArgs($args = '') {
+        if( is_user_logged_in() ) {
+            $args['menu'] = 'main-logged-in';
+        } else {
+            $args['menu'] = 'main';
+        }
+
+        return $args;
     }
 }
