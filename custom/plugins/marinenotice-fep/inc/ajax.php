@@ -36,15 +36,15 @@ function fep_post_has_errors($content){
     if ( !empty($content['post_title']) && str_word_count( $content['post_title'] ) > $max_words_title )
         $error_string .= 'The title is too long<br/>';
     if ( !empty($content['post_content']) && str_word_count( $stripped_content ) < $min_words_content )
-        $error_string .= 'The article is too short<br/>';
+        $error_string .= 'The content of the notice is too short<br/>';
     if ( str_word_count( $stripped_content ) > $max_words_content )
-        $error_string .= 'The article is too long<br/>';
+        $error_string .= 'The content of the notice is too long<br/>';
 	if ( !empty($content['about_the_author']) && $stripped_bio != -1 && str_word_count( $stripped_bio ) < $min_words_bio )
         $error_string .= 'The bio is too short<br/>';
     if ( $stripped_bio != -1 && str_word_count( $stripped_bio ) > $max_words_bio )
         $error_string .= 'The bio is too long<br/>';
 	if ( substr_count( $content['post_content'], '</a>' ) > $max_links )
-        $error_string .= 'There are too many links in the article body<br/>';
+        $error_string .= 'There are too many links in the content of the notice<br/>';
 	if ( substr_count( $content['about_the_author'], '</a>' ) > $max_links_bio )
         $error_string .= 'There are too many links in the bio<br/>';
 	if ( !empty( $content['post_tags'] ) && count($tags_array) < $min_tags )
@@ -88,15 +88,15 @@ function fep_delete_posts(){
 		if(!wp_verify_nonce($_POST['delete_nonce'], 'fepnonce_delete_action'))
 			throw new Exception('Sorry! You failed the security check', 1);
 
-		if(!current_user_can('delete_post', $_POST['post_id']))
-			throw new Exception("You don't have permission to delete this post", 1);
+		if(!current_user_can('delete_notice', $_POST['post_id']))
+			throw new Exception("You don't have permission to delete this notice", 1);
 
 		$result = wp_delete_post( $_POST['post_id'], true );
 		if(!$result)
-			throw new Exception("The article could not be deleted", 1);
+			throw new Exception("The notice could not be deleted", 1);
 
 		$data['success'] = true;
-		$data['message'] = 'The article has been deleted successfully!';
+		$data['message'] = 'The notice has been deleted successfully!';
 	}
 	catch(Exception $ex){
 		$data['success'] = false;
@@ -121,7 +121,7 @@ function fep_process_form_input(){
 			throw new Exception("Sorry! You failed the security check", 1);
 
 		if($_POST['post_id'] != -1 && !current_user_can('edit_post', $_POST['post_id']))
-			throw new Exception('You don\'t have permission to edit this post.', 1);
+			throw new Exception('You don\'t have permission to edit this notice.', 1);
 
 		$fep_role_settings = get_option('fep_role_settings');
 		$fep_misc = get_option('fep_misc');
@@ -178,7 +178,7 @@ function fep_process_form_input(){
 
 		$data['success'] = true;
 		$data['post_id'] = $new_post_id;
-		$data['message'] = 'Your article has been '.$post_action.' successfully!<br/><a href="#" id="fep-continue-editing">Continue Editing</a>';
+		$data['message'] = 'Your notice has been '.$post_action.' successfully!<br/><a href="#" id="fep-continue-editing">Continue Editing</a>';
 	}
 	catch(Exception $ex){
 		$data['success'] = false;
