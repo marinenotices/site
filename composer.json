@@ -1,7 +1,8 @@
 {
     "require": {
         "psycle-wordpress/wordpress": "*",
-		"wpackagist-plugin/w3-total-cache": "*"
+		"wpackagist-plugin/w3-total-cache": "*",
+		"wpackagist-plugin/theme-my-login": "6.4.4"
     },
     "extra": {
         "installer-paths": {
