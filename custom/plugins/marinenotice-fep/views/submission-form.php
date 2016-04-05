@@ -40,7 +40,7 @@
 			<input type="hidden" name="about_the_author" id="fep-about" value="-1">
 		<?php endif; ?>
 		<label for="fep-category">Category</label><br/>
-		<?php wp_dropdown_categories(array('id'=>'fep-category', 'hide_empty' => 0, 'name' => 'post_category', 'orderby' => 'name', 'selected' => $post['category'], 'hierarchical' => true, 'show_option_none' => __('None'))); ?><br/>
+		<?php wp_dropdown_categories(array('id'=>'fep-category', 'hide_empty' => 0, 'name' => 'post_category', 'orderby' => 'name', 'selected' => $post['category'], 'hierarchical' => true, 'taxonomy' => 'notice_category', 'show_option_none' => __('None'))); ?><br/>
 		<label for="fep-tags">Tags</label><br/>
 		<input type="text" name="post_tags" id="fep-tags" value="<?php echo ($post) ? $post['tags']:''; ?>"><br/>
 		<div id="fep-featured-image">

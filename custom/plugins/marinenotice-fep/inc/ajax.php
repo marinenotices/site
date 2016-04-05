@@ -26,11 +26,11 @@ function fep_post_has_errors($content){
 	if( ($min_words_title && empty($content['post_title']) ) || ($min_words_content && empty($content['post_content'])) || ($min_words_bio && empty($content['about_the_author'])) || ($min_tags && empty($content['post_tags'])) ){
 		$error_string .= 'You missed one or more required fields<br/>';
 	}
-	
+
 	$tags_array 		= explode(',', $content['post_tags']);
 	$stripped_bio 		= strip_tags($content['about_the_author']);
 	$stripped_content 	= strip_tags($content['post_content']);
-	
+
     if ( !empty($content['post_title']) && str_word_count( $content['post_title'] ) < $min_words_title )
         $error_string .= 'The title is too short<br/>';
     if ( !empty($content['post_title']) && str_word_count( $content['post_title'] ) > $max_words_title )
@@ -53,7 +53,7 @@ function fep_post_has_errors($content){
 		$error_string .= 'There are too many tags<br/>';
 	if ( $thumb_required == 'true' && $content['featured_img'] == -1 )
 		$error_string .= 'You need to choose a featured image<br/>';
-	
+
 	if ( str_word_count( $error_string ) < 2 )
 		return false;
 	else
@@ -130,7 +130,7 @@ function fep_process_form_input(){
 			$errors = false;
 		else
 			$errors = fep_post_has_errors($_POST);
-		
+
 		if($errors)
 			throw new Exception($errors, 1);
 
@@ -140,6 +140,7 @@ function fep_process_form_input(){
 			$post_content = $_POST['post_content'];
 
 		$new_post = array(
+            'post_type'         => 'notice',
 			'post_title'   		=> sanitize_text_field( $_POST['post_title'] ),
 			'post_category'  	=> array( $_POST['post_category'] ),
 			'tags_input'  		=> sanitize_text_field( $_POST['post_tags'] ),
@@ -163,7 +164,7 @@ function fep_process_form_input(){
 		$new_post_id = wp_insert_post($new_post, true);
 		if(is_wp_error($new_post_id))
 			throw new Exception($new_post_id->get_error_message(), 1);
-		
+
 		if(!$fep_misc['disable_author_bio']){
 			if($fep_misc['nofollow_bio_links'])
 				$about_the_author = wp_rel_nofollow($_POST['about_the_author']);
