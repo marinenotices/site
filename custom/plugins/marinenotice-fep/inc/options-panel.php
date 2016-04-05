@@ -5,12 +5,12 @@ The settings page
 
 function fep_menu_item() {
 	global $fep_settings_page_hook;
-    $fep_settings_page_hook = add_plugins_page(
-        'FEP Settings',         			   		// The title to be displayed in the browser window for this page.
-        'FEP Settings',			            		// The text to be displayed for this menu item
-        'administrator',            				// Which type of users can see this menu item  
+    $fep_settings_page_hook = add_options_page(
+        'Front End Publishing',         			   		// The title to be displayed in the browser window for this page.
+        'Front End Publishing',			            		// The text to be displayed for this menu item
+        'administrator',            				// Which type of users can see this menu item
         'fep_settings',    							// The unique ID - that is, the slug - for this menu item
-        'fep_render_settings_page'     				// The name of the function to call when rendering this menu's page  
+        'fep_render_settings_page'     				// The name of the function to call when rendering this menu's page
     );
 }
 add_action( 'admin_menu', 'fep_menu_item' );
@@ -34,7 +34,7 @@ function fep_render_settings_page() {
 <h2>Front-End Publishing Settings</h2>
 	<?php settings_errors(); ?>
 	<div class="clearfix paddingtop20">
-		<div class="first ninecol">
+		<div class="first twelvecol">
 			<form method="post" action="options.php">
 				<?php settings_fields( 'fep_settings' ); ?>
 				<?php do_meta_boxes('fep_metaboxes','advanced',null); ?>
@@ -42,30 +42,12 @@ function fep_render_settings_page() {
 				<?php wp_nonce_field( 'meta-box-order', 'meta-box-order-nonce', false ); ?>
 			</form>
 		</div>
-		<div class="last threecol">
-			<div class="side-block">
-				Like the plugin? Don't forget to give it a good rating on WordPress.org.
-			</div>
-			<div class="side-block">
-				<h3>Frontend Publishing Pro</h3>
-				Supports:
-				<ul>
-					<li>- Custom fields</li>
-					<li>- Custom post types</li>
-					<li>- Custom taxonomies</li>
-					<li>- Unlimited forms</li>
-					<li>- Drag and drop form builder</li>
-					<li>- Media restrictions</li>
-				</ul>
-				<div style="text-align:center;"><a class="button button-primary" href="http://wpfrontendpublishing.com/">Try It Now!</a></div>
-			</div>
-		</div>
 	</div>
 </div>
 <?php }
 
-function fep_create_options() { 
-	
+function fep_create_options() {
+
 	add_settings_section( 'fep_restrictions_section', null, null, 'fep_settings' );
 	add_settings_section( 'fep_role_section', null, null, 'fep_settings' );
 	add_settings_section( 'fep_misc_section', null, null, 'fep_settings' );
@@ -250,12 +232,12 @@ function fep_create_options() {
 			'group' => 'fep_misc'
 		)
     );
-    // Finally, we register the fields with WordPress 
+    // Finally, we register the fields with WordPress
 	register_setting('fep_settings', 'fep_post_restrictions', 'fep_settings_validation');
 	register_setting('fep_settings', 'fep_role_settings', 'fep_settings_validation');
 	register_setting('fep_settings', 'fep_misc', 'fep_settings_validation');
-	
-} // end sandbox_initialize_theme_options 
+
+} // end sandbox_initialize_theme_options
 add_action('admin_init', 'fep_create_options');
 
 function fep_settings_validation($input){
@@ -296,7 +278,7 @@ function fep_render_settings_field($args){
 		foreach ($args['items'] as $key => $checkboxitem ):
 	?>
 		<input type="hidden" name="<?php echo $args['group'].'['.$args['id'].']['.$key.']'; ?>" value="0" />
-		<label for="<?php echo $args['group'].'['.$args['id'].']['.$key.']'; ?>"><?php echo $checkboxitem; ?></label> <input type="checkbox" name="<?php echo $args['group'].'['.$args['id'].']['.$key.']'; ?>" id="<?php echo $args['group'].'['.$args['id'].']['.$key.']'; ?>" value="1" 
+		<label for="<?php echo $args['group'].'['.$args['id'].']['.$key.']'; ?>"><?php echo $checkboxitem; ?></label> <input type="checkbox" name="<?php echo $args['group'].'['.$args['id'].']['.$key.']'; ?>" id="<?php echo $args['group'].'['.$args['id'].']['.$key.']'; ?>" value="1"
 		<?php if($key=='reason'){ ?>checked="checked" disabled="disabled"<?php }else{ checked($option_value[$args['id']][$key]); } ?> />
 	<?php endforeach; ?>
 	<?php elseif($args['type'] == 'multitext'):
