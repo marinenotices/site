@@ -47,6 +47,8 @@ class MarineNotice {
     function init() {
         register_post_type( 'notice',
             array(
+                'label' => __( 'notices', 'notices' ),
+                'description' => __( 'Marine Notices', 'notices' ),
                 'labels' => array(
                     'name' => __( 'Marine Notices' ),
                     'singular_name' => __( 'Marine Notice' )
