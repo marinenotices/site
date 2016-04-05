@@ -115,6 +115,7 @@ foreach($roles as $the_role) {
     $role->add_cap( 'edit_others_notices' );
     $role->add_cap( 'edit_published_notices' );
     $role->add_cap( 'publish_notices' );
+    $role->add_cap( 'delete_notices' );
     $role->add_cap( 'delete_others_notices' );
     $role->add_cap( 'delete_private_notices' );
     $role->add_cap( 'delete_published_notices' );
