@@ -8,3 +8,6 @@ local-config.php
 custom/themes/twentysixteen
 custom/themes/canvas
 custom/uploads
+custom/mu-plugins/psycle-pii-scrub
+_psycle-pii-scrub.php
+custom/plugins/wp-front-end-editor

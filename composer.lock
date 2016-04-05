@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fdea755104a2fe7205def75ead40b324",
-    "content-hash": "99d54edfb11013ef6ff6bd1477ce2ddf",
+    "hash": "344767e780dce8a0e067adc2db6e6f6e",
+    "content-hash": "439372839c70e073bb79d40d31a1c418",
     "packages": [
         {
             "name": "composer/installers",
@@ -127,15 +127,44 @@
             "time": "2015-10-19 15:02:25"
         },
         {
+            "name": "psycle-wordpress-plugins/psycle-pii-scrub",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Psycle/psycle-pii-scrub.git",
+                "reference": "ad1b8542bee4a3457564f9d283525ff0280172ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Psycle/psycle-pii-scrub/zipball/ad1b8542bee4a3457564f9d283525ff0280172ce",
+                "reference": "ad1b8542bee4a3457564f9d283525ff0280172ce",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "wordpress-muplugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Psycle Interactive",
+                    "email": "wordpress@psycle.com"
+                }
+            ],
+            "description": "WP_CLI command to scrub PII data from a WordPress database. Calling 'wp pii-scrub' will automatically detect major plugins (BuddyPress, WooCommerce) and scrub/replace any PII (personal information) so that a database compromise doesn't cause issues. Additional custom meta data to check/scrub can be defined at runtime.",
+            "time": "2016-04-05 10:35:07"
+        },
+        {
             "name": "psycle-wordpress/wordpress",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.psycle.com/psycle-wordpress/wordpress.git",
-                "reference": "0856776ddfe8d629d34d8c5b839f6eda87e9c21c"
+                "reference": "80ad5d33dcb982a5a2f437b5c9fc94e71d195492"
             },
             "require": {
                 "psycle-wordpress-plugins/mail-options": "@stable",
+                "psycle-wordpress-plugins/psycle-pii-scrub": "@stable",
                 "psycle-wordpress/wordpress-core-installer": "@stable",
                 "wordpress/wordpress": "*"
             },
@@ -161,10 +190,14 @@
                 {
                     "name": "Jim Robinson",
                     "email": "james.robinson@psycle.com"
+                },
+                {
+                    "name": "David Page",
+                    "email": "david.page@psycle.com"
                 }
             ],
-            "description": "Package to build wordpress with composer installation plugin",
-            "time": "2016-03-31 11:47:30"
+            "description": "Package to build WordPress with Composer installation plugin",
+            "time": "2016-04-05 11:23:32"
         },
         {
             "name": "psycle-wordpress/wordpress-core-installer",
@@ -240,6 +273,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/w3-total-cache/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-front-end-editor",
+            "version": "1.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-front-end-editor/",
+                "reference": "tags/1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-front-end-editor.1.1.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-front-end-editor/"
         }
     ],
     "packages-dev": [],
