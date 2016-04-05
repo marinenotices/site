@@ -27,7 +27,7 @@
 				<td><?php the_title(); ?></td>
 				<?php if($status=='publish'): ?><td class="fep-fixed-td"><a href="<?php the_permalink(); ?>" title="View Notice">View</a></td><?php endif; ?>
 				<td class="fep-fixed-td"><a href="?fep_action=edit&fep_id=<?=$postid;?><?=(isset($_SERVER['QUERY_STRING'])?'&'.$_SERVER['QUERY_STRING']:'')?>">Edit</a></td>
-				<?php if($status!=='publish'): ?><td class="post-delete fep-fixed-td"><img id="fep-loading-img-<?=$postid?>" class="fep-loading-img" src="<?php echo plugins_url( 'static/img/ajax-loading.gif', dirname(__FILE__) ); ?>"><a href="#">Delete</a><input type="hidden" class="post-id" value="<?=$postid?>"></td><?php endif; ?>
+				<td class="post-delete fep-fixed-td"><img id="fep-loading-img-<?=$postid?>" class="fep-loading-img" src="<?php echo plugins_url( 'static/img/ajax-loading.gif', dirname(__FILE__) ); ?>"><a href="#">Delete</a><input type="hidden" class="post-id" value="<?=$postid?>"></td>
 			</tr>
 			<?php endwhile; ?>
 		</table>
