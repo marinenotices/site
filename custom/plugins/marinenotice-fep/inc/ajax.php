@@ -142,7 +142,6 @@ function fep_process_form_input(){
 		$new_post = array(
             'post_type'         => 'notice',
 			'post_title'   		=> sanitize_text_field( $_POST['post_title'] ),
-			'post_category'  	=> array( $_POST['post_category'] ),
 			'tags_input'  		=> sanitize_text_field( $_POST['post_tags'] ),
 			'post_content' 		=> wp_kses_post($post_content)
 		);
@@ -164,6 +163,8 @@ function fep_process_form_input(){
 		$new_post_id = wp_insert_post($new_post, true);
 		if(is_wp_error($new_post_id))
 			throw new Exception($new_post_id->get_error_message(), 1);
+
+        wp_set_post_terms($new_post_id, array((int)$_POST['post_category']), 'notice_category');
 
 		if(!$fep_misc['disable_author_bio']){
 			if($fep_misc['nofollow_bio_links'])

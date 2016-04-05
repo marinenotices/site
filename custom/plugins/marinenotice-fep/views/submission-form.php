@@ -5,8 +5,8 @@
 	if( isset($_GET['fep_id']) && isset($_GET['fep_action']) && $_GET['fep_action'] == 'edit' ){
 		$post_id 			= $_GET['fep_id'];
 		$p 					= get_post($post_id, 'ARRAY_A');
-		if($p['post_author'] != $current_user->ID) return 'You don\'t have permission to edit this post';
-		$category 			= get_the_category($post_id);
+		if($p['post_author'] != $current_user->ID) return 'You don\'t have permission to edit this notice';
+		$category 			= get_the_terms($post_id, 'notice_category');
 		$tags 				= wp_get_post_tags( $post_id, array( 'fields' => 'names' ) );
 		$featured_img 		= get_post_thumbnail_id( $post_id );
 		$featured_img_html 	= (!empty($featured_img))?wp_get_attachment_image( $featured_img, array(200,200) ):'';
@@ -15,8 +15,9 @@
 								'content' 			=> $p['post_content'],
 								'about_the_author' 	=> get_post_meta($post_id, 'about_the_author', true)
 							);
+
 		if(isset($category[0]) && is_array($category))
-			$post['category'] 	= $category[0]->cat_ID;
+			$post['category'] 	= $category[0]->term_id;
 		if(isset($tags) && is_array($tags))
 			$post['tags'] 		= implode(', ', $tags);
 	}
