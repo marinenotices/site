@@ -1,8 +1,7 @@
 {
     "require": {
         "psycle-wordpress/wordpress": "*",
-		"wpackagist-plugin/w3-total-cache": "*",
-        "wpackagist-plugin/wp-front-end-editor": "1.1.0"
+		"wpackagist-plugin/w3-total-cache": "*"
     },
     "extra": {
         "installer-paths": {
