@@ -1,11 +1,9 @@
 <?php
 /*
 Plugin Name: Front-End Publishing
-Plugin URI: http://wpgurus.net/
-Description: Accept guest posts without giving your authors access to the back-end area.
+Description: Accept guest posts without giving your authors access to the back-end area.  This version modified from the original by Hassan Akhtar.
 Version: 2.2.2
-Author: Hassan Akhtar
-Author URI: http://wpgurus.net/
+Author: Austin Goudge
 License: GPL2
 */
 
