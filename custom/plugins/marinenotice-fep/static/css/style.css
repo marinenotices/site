@@ -26,11 +26,13 @@
 
 #fep-new-post #fep-post-title,
 #fep-new-post #fep-tags{
-	width: 400px;
+    max-width: 96%;
+	width: 600px;
 }
 
 #fep-new-post #fep-category{
-	width: 420px;
+    font-size: 14px;
+	width: 300px;
 }
 
 #fep-new-post #fep-about{
@@ -38,7 +40,7 @@
 }
 
 #fep-new-post #fep-post-title {
-	font-size: 30px;
+	font-size: 25px;
 }
 
 #fep-new-post .wp-editor-area{
@@ -55,6 +57,7 @@
 
 #wp-fep-post-content-wrap{
 	margin-bottom:20px;
+    margin-top:20px;
 }
 
 img.fep-loading-img{
@@ -100,7 +103,7 @@ button#fep-submit-post.passive-btn:hover{
 
 #no-js, #fep-message{
 	padding:20px;
-	margin-bottom:20px;	
+	margin-bottom:20px;
 	clear:both;
 	border-radius:5px;
 	-moz-border-radius:5px;
@@ -158,7 +161,7 @@ button#fep-submit-post.passive-btn:hover{
 
 #fep-posts .fep-fixed-td{
 	width: 40px;
-	text-align: center;	
+	text-align: center;
 }
 
 #fep-post-table-container {
