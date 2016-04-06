@@ -214,13 +214,13 @@ foreach($roles as $the_role) {
 
                     jQuery(document).ready(function() {
                         jQuery('#marinenotice-location-lat-0').change(function() {
-                            jQuery('#marinenotice-location-lat-0').val(Number(jQuery('#marinenotice-location-lat-0')) || 0);
+                            jQuery('#marinenotice-location-lat-0').val(parseFloat(jQuery('#marinenotice-location-lat-0').val()) || 0);
                             var center = new google.maps.LatLng(jQuery('#marinenotice-location-lat-0').val(), jQuery('#marinenotice-location-long-0').val());
                             gMapNautical.panTo(center);
                             marker.setPosition(center);
                         });
                         jQuery('#marinenotice-location-long-0').change(function() {
-                            jQuery('#marinenotice-location-long-0').val(Number(jQuery('#marinenotice-location-long-0')) || 0);
+                            jQuery('#marinenotice-location-long-0').val(parseFloat(jQuery('#marinenotice-location-long-0').val()) || 0);
                             var center = new google.maps.LatLng(jQuery('#marinenotice-location-lat-0').val(), jQuery('#marinenotice-location-long-0').val());
                             gMapNautical.panTo(center);
                             marker.setPosition(center);
