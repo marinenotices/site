@@ -45,16 +45,16 @@
 		?>
         <label for="nautical-map-container">Location</label>
         <p>Drag the pin to the location for the Notice, or enter the latitude and longitude manually below.</p>
+        <?php print_r($locations);?>
+        <?php if (!is_null($locations) && is_array($locations) && count($locations) > 0): ?>
+        <?php $location = array_shift(array_values($locations)); ?>
+        <?php echo do_shortcode('[navionics gmap="true" pin="true" lat="' . $location['lat'] . '" long="' . $location['long'] . '"]'); ?>
+        <label for='marinenotice-location-lat-0'>Latitude</label> <input id='marinenotice-location-lat-0' name='marinenotice-location-lat-0' type='text' value='<?php echo $location['lat']; ?>'/>
+        <label for='marinenotice-location-long-0'>Longitude</label> <input id='marinenotice-location-long-0' name='marinenotice-location-long-0' type='text' value='<?php echo $location['long']; ?>'/><br />
+        <?php else: ?>
         <?php echo do_shortcode('[navionics gmap="true" pin="true"]'); ?>
         <label for='marinenotice-location-lat-0'>Latitude</label> <input id='marinenotice-location-lat-0' name='marinenotice-location-lat-0' type='text' />
         <label for='marinenotice-location-long-0'>Longitude</label> <input id='marinenotice-location-long-0' name='marinenotice-location-long-0' type='text' /><br />
-        <?php if (!is_null($locations)): ?>
-            <?php $index = 1; ?>
-            <?php foreach ($locations as $location): ?>
-                <label for='marinenotice-location-lat-<?php echo $index; ?>'>Latitude</label> <input id='marinenotice-location-lat-<?php echo $index; ?>' name='marinenotice-location-lat-<?php echo $index; ?>' type='text' value="<?php echo $location['lat']; ?>"/><br />
-                <label for='marinenotice-location-long-<?php echo $index; ?>'>Longitude</label> <input id='marinenotice-location-long-<?php echo $index; ?>' name='marinenotice-location-long-<?php echo $index; ?>' type='text' value="<?php echo $location['long']; ?>"/><br />
-            <?php $index++; ?>
-            <?php endforeach; ?>
         <?php endif; ?>
 		<input type="hidden" name="about_the_author" id="fep-about" value="-1">
         <input type="hidden" name="fep-tags" id="fep-tags" value="">

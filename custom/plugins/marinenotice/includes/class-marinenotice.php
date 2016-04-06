@@ -131,13 +131,25 @@ foreach($roles as $the_role) {
     {
         $gmap = false;
         $pin = false;
+        $lat = false;
+        $long = false;
 
-        if (is_array($attrs) && array_key_exists('gmap', $attrs) && $attrs['gmap'] == 'true') {
-            $gmap = true;
-        }
+        if (is_array($attrs)) {
+            if (array_key_exists('gmap', $attrs) && $attrs['gmap'] == 'true') {
+                $gmap = true;
+            }
 
-        if (is_array($attrs) && array_key_exists('pin', $attrs) && $attrs['pin'] == 'true') {
-            $pin = true;
+            if (array_key_exists('pin', $attrs) && $attrs['pin'] == 'true') {
+                $pin = true;
+            }
+
+            if (array_key_exists('lat', $attrs)) {
+                $lat = $attrs['lat'];
+            }
+
+            if (array_key_exists('long', $attrs)) {
+                $long = $attrs['long'];
+            }
         }
 
         if ($gmap) {
@@ -155,14 +167,26 @@ foreach($roles as $the_role) {
 
                 <div id='nautical-map-container' class='map'></div>
                 <script>
-                    // Google Map Engine options
-                    var centerLatLong = new google.maps.LatLng(36.140751,-5.353585);
+                    // Google Map Engine options";
+            if ($lat && $long) {
+                $result .= "
+                    var centerLatLong = new google.maps.LatLng(" . $lat . "," . $long . ");
                     var gMapNauticalOptions = {
-                        zoom: 14,
+                        zoom: 12,
                         center: centerLatLong,
                         mapTypeId: google.maps.MapTypeId.ROADMAP
-                    };
+                    };";
+            } else {
+                $result .= "
+                    var centerLatLong = new google.maps.LatLng(0, 0);
+                    var gMapNauticalOptions = {
+                        zoom: 2,
+                        center: centerLatLong,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };";
+            }
 
+            $result .= "
                     // Create Google Map Engine
                     var gMapNautical = new google.maps.Map(document.getElementById('nautical-map-container'), gMapNauticalOptions);
 
@@ -219,7 +243,7 @@ foreach($roles as $the_role) {
                     /*webapi.showSonarControl(true);*/
                     webapi.loadKml('/?feed=kml', false);
                 </script>";
-    }
+        }
 
         return $result;
     }
@@ -287,6 +311,10 @@ foreach($roles as $the_role) {
 			return $post_id;
         }
 
+        self::processLocationsPostMeta($post_id);
+    }
+
+    static function processLocationsPostMeta($post_id) {
 		$locations = array();
 
   		foreach($_POST as $key => $value) {

@@ -38,7 +38,7 @@ function post_has_errors(title,content,bio,category,tags, fimg){
 
 	if((fep_rules.min_words_title !=0 && title==='') || (fep_rules.min_words_content !=0 && content==='') || (fep_rules.min_words_bio !=0 && bio==='') || category==-1 || (fep_rules.min_tags !=0 &&  tags==='') )
 		error_string = 'You missed one or more required fields</br>';
-	
+
 	var stripped_content = content.replace(/(<([^>]+)>)/ig,"");
 	var stripped_bio = bio.replace(/(<([^>]+)>)/ig,"");
 
@@ -124,6 +124,8 @@ jQuery(document).ready(function($){
 		var tags 			= $("#fep-tags").val();
 		var pid 			= $("#fep-post-id").val();
 		var fimg 			= $("#fep-featured-image-id").val();
+        var marinenotice_location_lat_0 = $('#marinenotice-location-lat-0').val();;
+        var marinenotice_location_long_0 = $('#marinenotice-location-long-0').val();;
 		var nonce 	 		= $("#fepnonce").val();
 		var message_box 	= $('#fep-message');
 		var form_container	= $('#fep-new-post');
@@ -153,7 +155,9 @@ jQuery(document).ready(function($){
 				post_tags: 			tags,
 				post_id: 			pid,
 				featured_img: 		fimg,
-				post_nonce: 		nonce
+				post_nonce: 		nonce,
+                'marinenotice-location-lat-0': marinenotice_location_lat_0,
+                'marinenotice-location-long-0': marinenotice_location_long_0
 			},
 			success:function(data, textStatus, XMLHttpRequest){
 				hasChanged = false;
