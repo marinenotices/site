@@ -210,6 +210,19 @@ foreach($roles as $the_role) {
                         jQuery('#marinenotice-location-long-0').val(event.latLng.lng());
                         var center = new google.maps.LatLng(event.latLng.lat(), event.latLng.lng());
                         gMapNautical.panTo(center);
+                    });
+
+                    jQuery(document).ready(function() {
+                        jQuery('#marinenotice-location-lat-0').change(function() {
+                            var center = new google.maps.LatLng(jQuery('#marinenotice-location-lat-0').val(), jQuery('#marinenotice-location-long-0').val());
+                            gMapNautical.panTo(center);
+                            marker.setPosition(center);
+                        });
+                        jQuery('#marinenotice-location-long-0').change(function() {
+                            var center = new google.maps.LatLng(jQuery('#marinenotice-location-lat-0').val(), jQuery('#marinenotice-location-long-0').val());
+                            gMapNautical.panTo(center);
+                            marker.setPosition(center);
+                        });
                     });";
             }
 
