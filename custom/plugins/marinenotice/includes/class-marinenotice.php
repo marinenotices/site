@@ -208,6 +208,8 @@ foreach($roles as $the_role) {
                     google.maps.event.addListener(marker, 'dragend', function (event) {
                         jQuery('#marinenotice-location-lat-0').val(event.latLng.lat());
                         jQuery('#marinenotice-location-long-0').val(event.latLng.lng());
+                        var center = new google.maps.LatLng(event.latLng.lat(), event.latLng.lng());
+                        gMapNautical.panTo(center);
                     });";
             }
 
