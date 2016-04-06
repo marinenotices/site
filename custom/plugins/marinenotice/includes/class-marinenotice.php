@@ -129,10 +129,84 @@ foreach($roles as $the_role) {
      */
     function navionicsMapShortcode($attrs)
     {
-        return "<div class='test_map_div'></div>
+        $gmap = false;
+        $pin = false;
+
+        if (is_array($attrs) && array_key_exists('gmap', $attrs) && $attrs['gmap'] == 'true') {
+            $gmap = true;
+        }
+
+        if (is_array($attrs) && array_key_exists('pin', $attrs) && $attrs['pin'] == 'true') {
+            $pin = true;
+        }
+
+        if ($gmap) {
+            $result = "
+                <style>
+                    #nautical-map-container {
+                        border: 1px solid gray;
+                        min-height: 500px;
+                        width: 100%;
+                        height: 100%;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+                </style>
+
+                <div id='nautical-map-container' class='map'></div>
+                <script>
+                    // Google Map Engine options
+                    var centerLatLong = new google.maps.LatLng(36.140751,-5.353585);
+                    var gMapNauticalOptions = {
+                        zoom: 14,
+                        center: centerLatLong,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+
+                    // Create Google Map Engine
+                    var gMapNautical = new google.maps.Map(document.getElementById('nautical-map-container'), gMapNauticalOptions);
+
+                    // Create Navionics NauticalChart
+                    var navionics_nauticalchart_layer = new JNC.Views.gNavionicsOverlay({
+                        navKey: 'Navionics_webapi_01136',
+                        chartType: JNC.Views.gNavionicsOverlay.CHARTS.NAUTICAL
+                    });";
+
+            if ($pin) {
+                $result .= "
+                    var marker = new google.maps.Marker({
+                        position: centerLatLong,
+                        map: gMapNautical,
+                        draggable: true,
+                        title: 'Drag me!'
+                    });
+
+                    google.maps.event.addListener(marker, 'dragend', function (event) {
+                        jQuery('#marinenotice-location-lat-0').val(event.latLng.lat());
+                        jQuery('#marinenotice-location-long-0').val(event.latLng.lng());
+                    });";
+            }
+
+            $result .= "
+                    gMapNautical.overlayMapTypes.insertAt(0, navionics_nauticalchart_layer);
+                </script>
+            ";
+        } else {
+            $result = "
+                <style>
+                    #nautical-map-container {
+                        border: 1px solid gray;
+                        min-height: 500px;
+                        width: 100%;
+                        height: 100%;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+                </style>
+                <div id='nautical-map-container'></div>
                 <script>
                     var webapi = new JNC.Views.BoatingNavionicsMap({
-                        tagId: '.test_map_div',
+                        tagId: '#nautical-map-container',
                         center: [  12.0, 46.0 ],
                         zoom: 0,
                         /* locale: 'CA', */
@@ -147,13 +221,19 @@ foreach($roles as $the_role) {
                 </script>";
     }
 
+        return $result;
+    }
+
     /**
      * Add all extra JS and CSS to the page
      */
     function addScriptsAndStyles() {
-        wp_register_script('navionicsJS', 'http://webapiv2.navionics.com/dist/webapi/webapi.min.no-dep.js', array(), false, false);
-        wp_register_style('navionicsCSS', 'http://webapiv2.navionics.com/dist/webapi/webapi.min.css', array(), false, 'all');
+        wp_register_script('navionicsJS', '//webapiv2.navionics.com/dist/webapi/webapi.min.no-dep.js', array(), false, false);
+        wp_register_script('googleMapsJS', '//maps.googleapis.com/maps/api/js?key=AIzaSyCrRIr0X30B_d2Xp-s7ufCB5wSlvfKHoZI', array(), false, false);
+        wp_register_style('navionicsCSS', '//webapiv2.navionics.com/dist/webapi/webapi.min.css', array(), false, 'all');
+
         wp_enqueue_script('navionicsJS');
+        wp_enqueue_script('googleMapsJS');
         wp_enqueue_style('navionicsCSS');
     }
 
