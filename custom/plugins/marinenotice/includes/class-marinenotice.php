@@ -174,7 +174,10 @@ foreach($roles as $the_role) {
                     var gMapNauticalOptions = {
                         zoom: 12,
                         center: centerLatLong,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        streetViewControl: false,
+                        rotateControl: false,
+                        fullscreenControl: false
                     };";
             } else {
                 $result .= "
@@ -182,7 +185,10 @@ foreach($roles as $the_role) {
                     var gMapNauticalOptions = {
                         zoom: 2,
                         center: centerLatLong,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        streetViewControl: false,
+                        rotateControl: false,
+                        fullscreenControl: false
                     };";
             }
 
