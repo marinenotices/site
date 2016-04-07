@@ -377,13 +377,15 @@ foreach($roles as $the_role) {
      * Add all extra JS and CSS to the page
      */
     function addScriptsAndStyles() {
-        wp_register_script('navionicsJS', '//webapiv2.navionics.com/dist/webapi/webapi.min.no-dep.js', array(), false, false);
-        wp_register_script('googleMapsJS', '//maps.googleapis.com/maps/api/js?key=AIzaSyCrRIr0X30B_d2Xp-s7ufCB5wSlvfKHoZI', array(), false, false);
-        wp_register_style('navionicsCSS', '//webapiv2.navionics.com/dist/webapi/webapi.min.css', array(), false, 'all');
+        wp_register_script('navionics', '//webapiv2.navionics.com/dist/webapi/webapi.min.no-dep.js', array(), false, false);
+        wp_register_script('googleMaps', '//maps.googleapis.com/maps/api/js?key=AIzaSyCrRIr0X30B_d2Xp-s7ufCB5wSlvfKHoZI', array(), false, false);
+        wp_register_style('navionics', '//webapiv2.navionics.com/dist/webapi/webapi.min.css', array(), false, 'all');
 
-        wp_enqueue_script('navionicsJS');
-        wp_enqueue_script('googleMapsJS');
-        wp_enqueue_style('navionicsCSS');
+        wp_enqueue_script('navionics');
+        wp_enqueue_script('googleMaps');
+
+        wp_enqueue_style('navionics');
+        wp_enqueue_style('marinenotice', plugins_url('../css/style.css', __FILE__), array(), '1.1', 'all' );
     }
 
     function addMetaBoxes($output) {

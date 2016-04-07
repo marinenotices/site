@@ -1,0 +1,8 @@
+/* Fix bug with Canvas theme and Navionics chart overlay on Google Maps */
+#nautical-map-container img {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: transparent;
+}
+
