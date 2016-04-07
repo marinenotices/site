@@ -525,7 +525,7 @@ foreach($roles as $the_role) {
 
                     echo "<Placemark>
                             <name>" . $post->post_title . ($count > 1 ? " (" . $index . " of " . $count . ")" : "") . "</name>
-                            <description><![CDATA[For more information <a href='" . $post->guid . "'>click here</a>.  Source: " . get_the_author_meta( "display_name", $post->post_author ) . "]]></description>
+                            <description><![CDATA[For more information <a href='" . $post->guid . "'>click here</a>.  Source: <a href='" . get_author_posts_url( $post->post_author, $author_nicename ) . "'>" . get_the_author_meta( "display_name", $post->post_author ) . "</a>]]></description>
                             <styleUrl>#style1</styleUrl>
                             <Point>
                             <coordinates>" . $location['long'] . "," . $location['lat'] . "</coordinates>
