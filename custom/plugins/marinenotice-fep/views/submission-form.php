@@ -45,17 +45,29 @@
 		?>
         <label for="nautical-map-container">Location</label>
         <p>Drag the pin to the location for the Notice, or enter the latitude and longitude manually below.</p>
-        <?php print_r($locations);?>
         <?php if (!is_null($locations) && is_array($locations) && count($locations) > 0): ?>
         <?php $location = array_shift(array_values($locations)); ?>
         <?php echo do_shortcode('[navionics gmap="true" pin="true" lat="' . $location['lat'] . '" long="' . $location['long'] . '"]'); ?>
-        <label for='marinenotice-location-lat-0'>Latitude</label> <input id='marinenotice-location-lat-0' name='marinenotice-location-lat-0' type='text' value='<?php echo $location['lat']; ?>'/>
-        <label for='marinenotice-location-long-0'>Longitude</label> <input id='marinenotice-location-long-0' name='marinenotice-location-long-0' type='text' value='<?php echo $location['long']; ?>'/><br />
+        <table class='small'>
+            <tr><th colspan='4'>Decimal Degrees</th></tr>
+            <tr><th>Latitude</th><td colspan='3'><input id='marinenotice-location-lat-0' name='marinenotice-location-lat-0' type='text' value='<?php echo $location['lat']; ?>'/></td></tr>
+            <tr><th>Longitude</th><td colspan='3'><input id='marinenotice-location-long-0' name='marinenotice-location-long-0' type='text' value='<?php echo $location['long']; ?>'/></td></tr>
         <?php else: ?>
         <?php echo do_shortcode('[navionics gmap="true" pin="true"]'); ?>
-        <label for='marinenotice-location-lat-0'>Latitude</label> <input id='marinenotice-location-lat-0' name='marinenotice-location-lat-0' type='text' />
-        <label for='marinenotice-location-long-0'>Longitude</label> <input id='marinenotice-location-long-0' name='marinenotice-location-long-0' type='text' /><br />
+        <table>
+            <tr><th colspan='4'>Decimal Degrees</th></tr>
+            <tr><th>Latitude</th><td colspan='3'><input id='marinenotice-location-lat-0' name='marinenotice-location-lat-0' type='text' /></td></tr>
+            <tr><th>Longitude</th><td colspan='3'><input id='marinenotice-location-long-0' name='marinenotice-location-long-0' type='text' /></td></tr>
         <?php endif; ?>
+            <tr><th colspan='4'>Degrees with Decimal Minutes</th></tr>
+            <tr><th>Latitude</th><td><label for='dm-degrees-lat'>Deg</label> <input type='text' id='dm-degrees-lat' size='1' maxlength="4" /></td><td colspan='2'><label for='dm-minutes-lat'>Min (decimal)</label> <input type='text' id='dm-minutes-lat' /></td></tr>
+            <tr><th>Longitude</th><td><label for='dm-degrees-long'>Deg</label> <input type='text' id='dm-degrees-long' size='1' maxlength="4" /></td><td colspan='2'><label for='dm-minutes-long'>Min (decimal)</label> <input type='text' id='dm-minutes-long' /></td></tr>
+
+            <tr><th colspan='4'>Degrees, Minutes and Seconds</th></tr>
+            <tr><th>Latitude</th><td><label for='dms-degrees-lat'>Deg</label> <input type='text' id='dms-degrees-lat' size='1' maxlength="4" /></td><td><label for='dms-minutes-lat'>Min</label> <input type='text' id='dms-minutes-lat' size='1' maxlength="2" /></td><td><label for='dms-seconds-lat'>Sec</label> <input type='text' id='dms-seconds-lat' size='1' /></td></tr>
+            <tr><th>Longitude</th><td><label for='dms-degrees-long'>Deg</label> <input type='text' id='dms-degrees-long' size='1' maxlength="4" /></td><td><label for='dms-minutes-long'>Min</label> <input type='text' id='dms-minutes-long' size='1'maxlength="2" /></td><td><label for='dms-seconds-long'>Sec</label> <input type='text' id='dms-seconds-long' size='1' /></td></tr>
+        </table>
+
 		<input type="hidden" name="about_the_author" id="fep-about" value="-1">
         <input type="hidden" name="fep-tags" id="fep-tags" value="">
 		<label for="fep-category">Category</label>

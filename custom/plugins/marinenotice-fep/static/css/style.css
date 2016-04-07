@@ -55,6 +55,19 @@
     text-align: center;
 }
 
+#fep-new-post table td, #fep-new-post table th {
+    font-size: 0.7em;
+    vertical-align: middle;
+}
+
+#fep-new-post table label {
+    font-size: 1em;
+}
+
+#fep-new-post table input {
+    margin-bottom: 0;
+}
+
 #wp-fep-post-content-wrap{
 	margin-bottom:20px;
     margin-top:20px;
