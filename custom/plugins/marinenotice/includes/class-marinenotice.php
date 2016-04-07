@@ -174,8 +174,7 @@ foreach($roles as $the_role) {
                     var gMapNauticalOptions = {
                         zoom: 12,
                         center: centerLatLong,
-                        mapTypeId: 'marinenotice',
-                        mapTypeControl: false,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
                         streetViewControl: false,
                         rotateControl: false,
                         fullscreenControl: false,
@@ -189,8 +188,7 @@ foreach($roles as $the_role) {
                     var gMapNauticalOptions = {
                         zoom: 2,
                         center: centerLatLong,
-                        mapTypeId: 'marinenotice',
-                        mapTypeControl: false,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
                         streetViewControl: false,
                         rotateControl: false,
                         fullscreenControl: false,
@@ -201,27 +199,6 @@ foreach($roles as $the_role) {
             }
 
             $result .= "
-                    function MarineNoticeMapType(tileSize) {
-                        this.tileSize = tileSize;
-                    }
-
-                    MarineNoticeMapType.prototype.maxZoom = 19;
-                    MarineNoticeMapType.prototype.name = 'Tile #s';
-                    MarineNoticeMapType.prototype.alt = 'Tile Coordinate Map Type';
-
-                    MarineNoticeMapType.prototype.getTile = function(coord, zoom, ownerDocument) {
-                        var div = ownerDocument.createElement('div');
-                        div.innerHTML = coord;
-                        div.style.width = this.tileSize.width + 'px';
-                        div.style.height = this.tileSize.height + 'px';
-                        div.style.fontSize = '10';
-                        div.style.borderStyle = 'none';
-                        div.style.borderWidth = '0px';
-                        //div.style.backgroundColor = '#000000';
-                        //div.style.opacity = '0';
-                        return div;
-                    };
-
                     // Create Google Map Engine
                     var gMapNautical = new google.maps.Map(document.getElementById('nautical-map-container'), gMapNauticalOptions);
 
@@ -366,7 +343,6 @@ foreach($roles as $the_role) {
             }
 
             $result .= "
-                    gMapNautical.mapTypes.set('marinenotice', new MarineNoticeMapType(new google.maps.Size(256, 256)));
                     gMapNautical.overlayMapTypes.insertAt(0, navionics_nauticalchart_layer);
                 </script>
             ";
