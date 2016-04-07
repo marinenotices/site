@@ -40,7 +40,7 @@
         <p>Enter a description of the Notice.  Include as much detail as possible, although it is not necessary to include the latitude and longitude as you can enter this via the map below.</p>
 		<?php
 			$enable_media = (isset($fep_roles['enable_media']) && $fep_roles['enable_media'])?current_user_can($fep_roles['enable_media']):1;
-			wp_editor( $post['content'], 'fep-post-content', $settings = array('textarea_name'=>'post_content', 'textarea_rows'=> 7, 'media_buttons'=>false, 'quicktags'=>false, 'tinymce'=>array('toolbar1'=>'bold,italic,underline,|,bullist,numlist,|,link,unlink,|,undo,redo,|,pastetext')) );
+			wp_editor( $post['content'], 'fep-post-content', $settings = array('textarea_name'=>'post_content', 'textarea_rows'=> 15, 'media_buttons'=>false, 'quicktags'=>false, 'tinymce'=>array('toolbar1'=>'bold,italic,underline,|,bullist,numlist,|,link,unlink,|,undo,redo,|,pastetext')) );
 			wp_nonce_field('fepnonce_action','fepnonce');
 		?>
         <label for="nautical-map-container">Location</label>
