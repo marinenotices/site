@@ -11,3 +11,14 @@
     -moz-border-radius: 0 ! important;
     -webkit-border-radius: 0 ! important;
 }
+
+h1.entry-title {
+    padding-top: 1em;
+    padding-bottom: 0.25em;
+}
+
+#comments .avatar img {
+    border-radius: 0 ! important;
+    -moz-border-radius: 0 ! important;
+    -webkit-border-radius: 0 ! important;
+}
