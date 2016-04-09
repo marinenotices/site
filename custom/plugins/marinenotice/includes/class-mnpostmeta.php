@@ -1,6 +1,6 @@
 <?php
 
-class MNPostmetaLocations {
+class MNPostmeta {
 	function generateLocationsMetabox() {
         echo "<form>";
         wp_nonce_field('marinenotice-locations', 'marinenotice-locations');

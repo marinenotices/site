@@ -1,6 +1,6 @@
 <?php
 
-class MNPosttypeNotice {
+class MNPosttypes {
     function init() {
         register_post_type( 'notice',
             array(
