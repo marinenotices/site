@@ -34,12 +34,12 @@ class MarineNotice {
 
         add_action('add_meta_boxes', array($this, 'addMetaBoxes'));
         add_filter('admin_bar_menu', array($this, 'adminBarMenu'), 25);
-        add_action('do_feed_kml', array($this, 'kmlFeed'));
+        add_action('do_feed_kml', array($this, 'doFeedKML'));
         add_action('init', array($this, 'init'));
         add_action('pre_get_posts', array($this, 'preGetPosts'));
-        add_action('save_post', array($this, 'saveLocations'));
+        add_action('save_post', array($this, 'savePost'));
         add_action('wp_before_admin_bar_render', array($this, 'beforeAdminBarRender'));
-        add_action('wp_enqueue_scripts', array($this, 'addScriptsAndStyles'));
+        add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
 
         add_filter('wp_nav_menu_args', array($this, 'navMenuArgs'));
 
@@ -384,7 +384,7 @@ foreach($roles as $the_role) {
     /**
      * Add all extra JS and CSS to the page
      */
-    function addScriptsAndStyles() {
+    function enqueueScripts() {
         wp_register_script('navionics', '//webapiv2.navionics.com/dist/webapi/webapi.min.no-dep.js', array(), false, false);
         wp_register_script('googleMaps', '//maps.googleapis.com/maps/api/js?key=AIzaSyCrRIr0X30B_d2Xp-s7ufCB5wSlvfKHoZI', array(), false, false);
         wp_register_style('navionics', '//webapiv2.navionics.com/dist/webapi/webapi.min.css', array(), false, 'all');
@@ -433,7 +433,7 @@ foreach($roles as $the_role) {
         echo "</form>";
 	}
 
-    function saveLocations($post_id) {
+    function savePost($post_id) {
 		if (!isset($_POST['marinenotice-locations']) || !wp_verify_nonce($_POST['marinenotice-locations'], 'marinenotice-locations')) {
     		return $post_id;
   		}
@@ -487,7 +487,7 @@ foreach($roles as $the_role) {
 		update_post_meta($post_id, "marinenotice-locations", serialize($locations));
     }
 
-    function kmlFeed() {
+    function doFeedKML() {
 		header('Content-Type: application/xml');
 
 	    echo '<?xml version="1.0" encoding="UTF-8"?>
