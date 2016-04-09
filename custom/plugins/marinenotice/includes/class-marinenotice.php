@@ -31,12 +31,14 @@ class MarineNotice {
 
     private $mnShortcodes;
     private $mnPostmetaLocations;
+    private $mnPosttypeNotice;
 
     public function run($pluginDirPath) {
         $this->pluginDirPath = $pluginDirPath;
 
         $this->mnShortcodes = new MNShortcodes();
         $this->mnPostmetaLocations = new MNPostmetaLocations();
+        $this->mnPosttypeNotice = new MNPosttypeNotice();
 
         add_action('add_meta_boxes', array($this, 'addMetaBoxes'));
         add_filter('admin_bar_menu', array($this, 'adminBarMenu'), 25);
@@ -56,50 +58,8 @@ class MarineNotice {
      * Initialisation. Set up custom post type and taxonomies.
      */
     function init() {
-        register_post_type( 'notice',
-            array(
-                'label' => __( 'notices', 'notices' ),
-                'description' => __( 'Marine Notices', 'notices' ),
-                'labels' => array(
-                    'name' => __( 'Marine Notices' ),
-                    'singular_name' => __( 'Marine Notice' )
-                ),
-                'public' => true,
-                'has_archive' => true,
-                'supports' => array(
-                    'title',
-                    'editor',
-                    'thumbnail',
-                    'revisions'
-                ),
-                'show_ui' => true,
-                'show_in_admin_bar' => true,
-                'capability_type' => array('notice', 'notices'),
-                'map_meta_cap' => true,
-            )
-        );
-
-        register_taxonomy( 'notice_category', // register custom taxonomy - category
-			'notice',
-			array(
-				'hierarchical' => true,
-				'labels' => array(
-					'name' => 'Notice category',
-					'singular_name' => 'Notice category',
-				)
-			)
-		);
-		register_taxonomy( 'notice_tag', // register custom taxonomy - tag
-			'notice',
-			array(
-				'hierarchical' => false,
-				'labels' => array(
-					'name' => 'Notice tag',
-					'singular_name' => 'Notice tag',
-				)
-			)
-		);
-
+        $this->mnPosttypeNotice->init();
+        
 // Once stabilised, get rid of remove_role and move the rest into a register_activation_hook()
 remove_role('harbourmaster');
 add_role('harbourmaster', "Harbourmaster", array(
