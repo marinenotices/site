@@ -32,13 +32,14 @@ class MarineNotice {
     public function run($pluginDirPath) {
         $this->pluginDirPath = $pluginDirPath;
 
-        add_action('init', array($this, 'init'));
-        add_action('wp_enqueue_scripts', array($this, 'addScriptsAndStyles'));
         add_action('add_meta_boxes', array($this, 'addMetaBoxes'));
-        add_action('save_post', array($this, 'saveLocations'));
+        add_filter('admin_bar_menu', array($this, 'adminBarMenu'), 25);
         add_action('do_feed_kml', array($this, 'kmlFeed'));
-        add_action('wp_before_admin_bar_render', array($this, 'adminMenuBar'));
+        add_action('init', array($this, 'init'));
         add_action('pre_get_posts', array($this, 'preGetPosts'));
+        add_action('save_post', array($this, 'saveLocations'));
+        add_action('wp_before_admin_bar_render', array($this, 'beforeAdminBarRender'));
+        add_action('wp_enqueue_scripts', array($this, 'addScriptsAndStyles'));
 
         add_filter('wp_nav_menu_args', array($this, 'navMenuArgs'));
 
@@ -540,7 +541,7 @@ foreach($roles as $the_role) {
 	    echo "</Document></kml>";
 	}
 
-    function adminMenuBar() {
+    function beforeAdminBarRender() {
         if (!current_user_can( 'manage_options' ) ) {
             global $wp_admin_bar;
 
@@ -564,5 +565,14 @@ foreach($roles as $the_role) {
         if ( $query->is_main_query() && $query->is_author() ) {
             $query->set( 'post_type', 'notice' );
         }
+    }
+
+    function adminBarMenu($wp_admin_bar) {
+        $my_account = $wp_admin_bar->get_node('my-account');
+        $newtitle = str_replace('Howdy,', '', $my_account->title);
+        $wp_admin_bar->add_node(array(
+            'id' => 'my-account',
+            'title' => $newtitle,
+        ) );
     }
 }
