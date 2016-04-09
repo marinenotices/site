@@ -165,7 +165,7 @@ function fep_process_form_input(){
 			throw new Exception($new_post_id->get_error_message(), 1);
 
         wp_set_post_terms($new_post_id, array((int)$_POST['post_category']), 'notice_category');
-        MarineNotice::processLocationsPostMeta($new_post_id);
+        MNPostmetaLocations::processLocationsPostMeta($new_post_id);
 
 		if(!$fep_misc['disable_author_bio']){
 			if($fep_misc['nofollow_bio_links'])
