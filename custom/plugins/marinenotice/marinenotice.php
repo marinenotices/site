@@ -20,6 +20,7 @@ if (defined('WP_INSTALLING') && WP_INSTALLING) {
 
 require_once plugin_dir_path(__FILE__) . 'includes/class-marinenotice.php';
 require_once plugin_dir_path(__FILE__) . 'includes/class-mnshortcodes.php';
+require_once plugin_dir_path(__FILE__) . 'includes/class-mnpostmeta-locations.php';
 
 $osx = new MarineNotice();
 $osx->run(plugin_dir_path(__FILE__));
