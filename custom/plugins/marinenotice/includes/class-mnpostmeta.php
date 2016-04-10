@@ -36,15 +36,15 @@ class MNPostmeta {
 
     function savePost($post_id) {
 		if (!wp_verify_nonce($_POST['marinenotice-locations'], 'marinenotice-locations')) {
-    		return $post_id;
+    		return;
   		}
 
         if (!current_user_can('edit_post', $post_id)) {
-            return $post_id;
+            return;
         }
 
 		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-			return $post_id;
+			return;
         }
 
         self::processLocationsPostMeta($post_id);
