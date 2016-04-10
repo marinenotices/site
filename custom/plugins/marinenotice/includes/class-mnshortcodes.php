@@ -1,13 +1,16 @@
 <?php
 
 class MNShortcodes {
-    function __construct() {
-    }
-
     /**
-     * Shortcode for displaying a Navionics Map
-     * @param type $attrs
-     * @return string
+     * Shortcode for displaying a Navionics Map.
+     *
+     * @example <code>[navionics]</code> produces a simple Navionics map
+     * @example <code>[navionics gmap="true"]</code> produces a combined Navionics and Google map
+     * @example <code>[navionics gmap="true" pin="true"]</code> produces a combined Navionics and Google map with a draggable pin
+     * @example <code>[navionics gmap="true" pin="true" lat="53.1" long="-4.4"]</code> produces a combined Navionics and Google map with a draggable pin, centred on given lat and long
+     *
+     * @param array $attrs The shortcode attributes
+     * @return string The content to inject
      */
     function navionicsMapShortcode($attrs)
     {

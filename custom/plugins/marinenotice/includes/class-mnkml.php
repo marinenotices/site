@@ -1,6 +1,9 @@
 <?php
 class MNKML {
-    function getFeed() {
+    /**
+     * do_feed_kml action to generate the KML feed
+     */
+    function doFeed() {
 		header('Content-Type: application/xml');
 
 	    echo '<?xml version="1.0" encoding="UTF-8"?>

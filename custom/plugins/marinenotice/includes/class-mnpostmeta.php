@@ -1,6 +1,9 @@
 <?php
 
 class MNPostmeta {
+    /**
+     * add_meta_box callback to add a meta box for editing locations (lat and long).
+     */
 	function generateLocationsMetabox() {
         echo "<form>";
         wp_nonce_field('marinenotice-locations', 'marinenotice-locations');
@@ -34,6 +37,11 @@ class MNPostmeta {
         echo "</form>";
 	}
 
+    /**
+     * save_post action to handle saving of locations
+     *
+     * @param integer $post_id The post ID being saved
+     */
     function savePost($post_id) {
 		if (!wp_verify_nonce($_POST['marinenotice-locations'], 'marinenotice-locations')) {
     		return;
@@ -50,6 +58,12 @@ class MNPostmeta {
         self::processLocationsPostMeta($post_id);
     }
 
+    /**
+     * Generate and update the post meta object for locations.  Static so we can also call this function
+     * from the front end editor.
+     *
+     * @param integer $post_id The post ID being saved.
+     */
     static function processLocationsPostMeta($post_id) {
 		$locations = array();
 
@@ -87,5 +101,4 @@ class MNPostmeta {
 
 		update_post_meta($post_id, "marinenotice-locations", serialize($locations));
     }
-
 }

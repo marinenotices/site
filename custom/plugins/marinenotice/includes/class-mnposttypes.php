@@ -1,6 +1,9 @@
 <?php
 
 class MNPosttypes {
+    /**
+     * Register the 'notice' custom post type and its taxonomies.
+     */
     function init() {
         register_post_type( 'notice',
             array(

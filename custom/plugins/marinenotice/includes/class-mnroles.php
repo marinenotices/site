@@ -1,6 +1,9 @@
 <?php
 
 class MNRoles {
+    /**
+     * Register the 'harbourmaster' role and its capabilities.
+     */
     function init() {
         // TODO Once stabilised, get rid of remove_role and move the rest into a register_activation_hook()
         remove_role('harbourmaster');
