@@ -155,22 +155,38 @@ class MNShortcodes {
                         var deg = jQuery('#dms-degrees-lat').val();
                         var min = jQuery('#dms-minutes-lat').val();
                         var sec = jQuery('#dms-seconds-lat').val();
-                        jQuery('#marinenotice-location-lat-0').val(deg * 1.0 + ((min * 1.0 + (sec / 60.0)) / 60.0));
+                        if (deg < 0) {
+                            jQuery('#marinenotice-location-lat-0').val(deg * 1.0 - ((min * 1.0 + (sec / 60.0)) / 60.0));
+                        } else {
+                            jQuery('#marinenotice-location-lat-0').val(deg * 1.0 + ((min * 1.0 + (sec / 60.0)) / 60.0));
+                        }
 
                         deg = jQuery('#dms-degrees-long').val();
                         min = jQuery('#dms-minutes-long').val();
                         sec = jQuery('#dms-seconds-long').val();
-                        jQuery('#marinenotice-location-long-0').val(deg * 1.0 + ((min * 1.0 + (sec / 60.0)) / 60.0));
+                        if (deg < 0) {
+                            jQuery('#marinenotice-location-long-0').val(deg * 1.0 - ((min * 1.0 + (sec / 60.0)) / 60.0));
+                        } else {
+                            jQuery('#marinenotice-location-long-0').val(deg * 1.0 + ((min * 1.0 + (sec / 60.0)) / 60.0));
+                        }
                     };
 
                     function dmToD() {
                         var deg = jQuery('#dm-degrees-lat').val();
                         var min = jQuery('#dm-minutes-lat').val();
-                        jQuery('#marinenotice-location-lat-0').val((deg * 1.0) + min / 60.0);
+                        if (deg < 0) {
+                            jQuery('#marinenotice-location-lat-0').val((deg * 1.0) - min / 60.0);
+                        } else {
+                            jQuery('#marinenotice-location-lat-0').val((deg * 1.0) + min / 60.0);
+                        }
 
                         deg = jQuery('#dm-degrees-long').val();
                         min = jQuery('#dm-minutes-long').val();
-                        jQuery('#marinenotice-location-long-0').val((deg * 1.0) + min / 60.0);
+                        if (deg < 0) {
+                            jQuery('#marinenotice-location-long-0').val((deg * 1.0) - min / 60.0);
+                        } else {
+                            jQuery('#marinenotice-location-long-0').val((deg * 1.0) + min / 60.0);
+                        }
                     };
 
                     function dToDMS() {
