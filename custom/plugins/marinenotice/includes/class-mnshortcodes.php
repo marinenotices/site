@@ -105,11 +105,51 @@ class MNShortcodes {
                     google.maps.event.addListener(marker, 'dragend', function (event) {
                         jQuery('#marinenotice-location-lat-0').val(event.latLng.lat());
                         jQuery('#marinenotice-location-long-0').val(event.latLng.lng());
-                        var center = new google.maps.LatLng(event.latLng.lat(), event.latLng.lng());
-                        gMapNautical.panTo(center);
-                        dToDM();
-                        dToDMS();
+                        validateD();
+                        recenterMapAndPin();
+                        dToDM(); validateDM();
+                        dToDMS(); validateDMS();
                     });
+
+                    function roundLatLong(number) {
+                        return Math.round(number * 1000000) / 1000000;
+                    }
+
+                    function validateD() {
+                        var value = parseFloat(jQuery('#marinenotice-location-lat-0').val()) || 0;
+                        jQuery('#marinenotice-location-lat-0').val(roundLatLong(Math.max(Math.min(value, 85), -85)));
+
+                        value = parseFloat(jQuery('#marinenotice-location-long-0').val()) || 0;
+                        jQuery('#marinenotice-location-long-0').val(roundLatLong(Math.max(Math.min(value, 180), -180)));
+                    }
+
+                    function validateDM() {
+                        var deg = parseInt(jQuery('#dm-degrees-lat').val()) || 0;
+                        var min = parseFloat(jQuery('#dm-minutes-lat').val()) || 0;
+                        jQuery('#dm-degrees-lat').val(Math.max(Math.min(deg, 85), -85));
+                        jQuery('#dm-minutes-lat').val(roundLatLong(Math.max(Math.min(min, 59.999999999), 0)));
+
+                        deg = parseInt(jQuery('#dm-degrees-long').val()) || 0;
+                        min = parseFloat(jQuery('#dm-minutes-long').val()) || 0;
+                        jQuery('#dm-degrees-long').val(Math.max(Math.min(deg, 180), -180));
+                        jQuery('#dm-minutes-long').val(roundLatLong(Math.max(Math.min(min, 59.999999999), 0)));
+                    }
+
+                    function validateDMS() {
+                        var deg = parseInt(jQuery('#dms-degrees-lat').val()) || 0;
+                        var min = parseInt(jQuery('#dms-minutes-lat').val()) || 0;
+                        var sec = parseInt(jQuery('#dms-seconds-lat').val()) || 0;
+                        jQuery('#dms-degrees-lat').val(Math.max(Math.min(deg, 85), -85));
+                        jQuery('#dms-minutes-lat').val(Math.max(Math.min(min, 59.999999999), 0));
+                        jQuery('#dms-seconds-lat').val(Math.max(Math.min(sec, 59.999999999), 0));
+
+                        deg = parseInt(jQuery('#dms-degrees-long').val()) || 0;
+                        min = parseInt(jQuery('#dms-minutes-long').val()) || 0;
+                        sec = parseInt(jQuery('#dms-seconds-long').val()) || 0;
+                        jQuery('#dms-degrees-long').val(Math.max(Math.min(deg, 180), -180));
+                        jQuery('#dms-minutes-long').val(Math.max(Math.min(min, 59.999999999), 0));
+                        jQuery('#dms-seconds-long').val(Math.max(Math.min(sec, 59.999999999), 0));
+                    }
 
                     function dmsToD() {
                         var deg = jQuery('#dms-degrees-lat').val();
@@ -168,30 +208,31 @@ class MNShortcodes {
                     };
 
                     function dChanged() {
-                        dToDM();
-                        dToDMS();
+                        validateD();
+                        dToDM(); validateDM();
+                        dToDMS(); validateDMS();
                         recenterMapAndPin();
                     };
 
                     function dmChanged() {
-                        dmToD();
-                        dToDMS();
+                        validateDM();
+                        dmToD(); validateD();
+                        dToDMS(); validateDMS();
                         recenterMapAndPin();
                     };
 
                     function dmsChanged() {
-                        dmsToD();
-                        dToDM();
+                        validateDMS();
+                        dmsToD(); validateD();
+                        dToDM(); validateDM();
                         recenterMapAndPin();
                     };
 
                     jQuery(document).ready(function() {
                         jQuery('#marinenotice-location-lat-0').change(function() {
-                            jQuery('#marinenotice-location-lat-0').val(parseFloat(jQuery('#marinenotice-location-lat-0').val()) || 0);
                             dChanged();
                         });
                         jQuery('#marinenotice-location-long-0').change(function() {
-                            jQuery('#marinenotice-location-long-0').val(parseFloat(jQuery('#marinenotice-location-long-0').val()) || 0);
                             dChanged();
                         });
                         jQuery('#dm-degrees-lat').change(function() {
