@@ -15,9 +15,24 @@ class MNRoles {
                                                                 'upload_files' => true,
                                                                 ) );
 
-        $roles = array('harbourmaster', 'editor', 'administrator');
+        // Assign capabilities to roles
+        $roles = array('harbourmaster');
 
-        // Loop through each role and assign capabilities
+        foreach($roles as $the_role) {
+            $role = get_role($the_role);
+
+            $role->add_cap( 'read_notice');
+            $role->add_cap( 'read_private_notices' );
+            $role->add_cap( 'edit_notice' );
+            $role->add_cap( 'edit_notices' );
+            $role->add_cap( 'edit_published_notices' );
+            $role->add_cap( 'delete_notices' );
+            $role->add_cap( 'delete_private_notices' );
+            $role->add_cap( 'delete_published_notices' );
+        }
+
+        $roles = array('editor', 'administrator');
+
         foreach($roles as $the_role) {
             $role = get_role($the_role);
 
