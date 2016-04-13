@@ -281,6 +281,8 @@ class MNShortcodes {
                         jQuery('#dms-seconds-long').change(function() {
                             dmsChanged();
                         });
+                        
+                        dChanged();
                     });";
             }
 
