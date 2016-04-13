@@ -144,7 +144,7 @@ function fep_create_options() {
 			'desc' => 'Submissions by users of this level and levels higher than this will be instantly published',
 			'id' => 'instantly_publish',
 			'type' => 'select',
-			'options' => array(0 => 'No one', 'update_core' =>'Administrator', 'moderate_comments' => 'Editor', 'edit_published_posts'=>'Author','edit_posts'=>'Contributor','read'=>'Subscriber'),
+			'options' => array(0 => 'No one', 'update_core' =>'Administrator', 'moderate_comments' => 'Editor', 'edit_published_posts'=>'Author','edit_published_notices'=>'Harbour Master','edit_posts'=>'Contributor','read'=>'Subscriber'),
 			'group' => 'fep_role_settings'
 		)
     );
