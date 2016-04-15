@@ -80,7 +80,10 @@ img.fep-loading-img{
 }
 button#fep-submit-post,
 button#fep-submit-post:active,
-button#fep-submit-post:hover {
+button#fep-submit-post:hover,
+button#fep-publish-post,
+button#fep-publish-post:active,
+button#fep-publish-post:hover {
     border-color: #306EB5;
     border-style: solid;
     border-width: 1px 1px 3px;
@@ -92,13 +95,16 @@ button#fep-submit-post:hover {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
 }
-button#fep-submit-post{
+button#fep-submit-post,
+button#fep-publish-post {
 	background: #4785CC;
 }
-button#fep-submit-post:hover{
+button#fep-submit-post:hover,
+button#fep-publish-post:hover {
 	background: #5391D8;
 }
-button#fep-submit-post:active{
+button#fep-submit-post:active,
+button#fep-publish-post:active {
 	padding-top: 12px;
 	padding-bottom: 8px;
 	background: #306EB5;

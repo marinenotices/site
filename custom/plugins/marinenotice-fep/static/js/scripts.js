@@ -71,6 +71,77 @@ function post_has_errors(title,content,bio,category,tags, fimg){
 		return '<h2>Your submission has errors. Please try again!</h2>'+error_string;
 }
 
+function submitForm($, mode) {
+    tinyMCE.triggerSave();
+    var title 			= $("#fep-post-title").val();
+    var content 		= $("#fep-post-content").val();
+    var bio 			= $("#fep-about").val();
+    var category 		= $("#fep-category").val();
+    var tags 			= $("#fep-tags").val();
+    var pid 			= $("#fep-post-id").val();
+    var fimg 			= $("#fep-featured-image-id").val();
+    var marinenotice_location_lat_0 = $('#marinenotice-location-lat-0').val();;
+    var marinenotice_location_long_0 = $('#marinenotice-location-long-0').val();;
+    var nonce 	 		= $("#fepnonce").val();
+    var message_box 	= $('#fep-message');
+    var form_container	= $('#fep-new-post');
+    var submit_btn 		= $('#fep-submit-post');
+    var publish_btn 	= $('#fep-publish-post');
+    var load_img 		= $("img.fep-loading-img");
+    var submission_form = $('#fep-submission-form');
+    var post_id_input 	= $("#fep-post-id");
+    var errors 			= post_has_errors(title, content, bio, category, tags, fimg);
+    if( errors ){
+        if( form_container.offset().top < $(window).scrollTop() ){
+        $('html, body').animate({ scrollTop: form_container.offset().top-10 }, 'slow'); }
+        message_box.removeClass('success').addClass('warning').html('').show().append(errors);
+        return;
+    }
+    load_img.show();
+    submit_btn.attr("disabled", true).removeClass('active-btn').addClass('passive-btn');
+    publish_btn.attr("disabled", true).removeClass('active-btn').addClass('passive-btn');
+    $.ajaxSetup({cache:false});
+    $.ajax({
+        type: 'POST',
+        url: fepajaxhandler.ajaxurl,
+        data: {
+            action: 			'fep_process_form_input',
+            post_title: 		title,
+            post_content: 		content,
+            about_the_author: 	bio,
+            post_category: 		category,
+            post_tags: 			tags,
+            post_id: 			pid,
+            featured_img: 		fimg,
+            post_nonce: 		nonce,
+            mode:               mode,
+            'marinenotice-location-lat-0': marinenotice_location_lat_0,
+            'marinenotice-location-long-0': marinenotice_location_long_0
+        },
+        success:function(data, textStatus, XMLHttpRequest){
+            hasChanged = false;
+            var arr = $.parseJSON(data);
+            if(arr.success){
+                submission_form.hide();
+                post_id_input.val(arr.post_id);
+                message_box.removeClass('warning').addClass('success');
+            }
+            else
+                message_box.removeClass('success').addClass('warning');
+            message_box.html('').append(arr.message).show();
+            if( form_container.offset().top < $(window).scrollTop() ){
+                $('html, body').animate({ scrollTop: form_container.offset().top-10 }, 'slow');
+            }
+            load_img.hide();
+            submit_btn.attr("disabled", false).removeClass('passive-btn').addClass('active-btn');
+            publish_btn.attr("disabled", false).removeClass('passive-btn').addClass('active-btn');
+        },
+        error: function(MLHttpRequest, textStatus, errorThrown){
+            alert(errorThrown);
+        }
+    });
+}
+
 jQuery(document).ready(function($){
     $("input, textarea, #fep-post-content").keydown(function () { hasChanged = true; });
 	$("select").change(function(){ hasChanged = true; });
@@ -115,72 +186,13 @@ jQuery(document).ready(function($){
 		});
 		event.preventDefault();
 	});
+
 	$("#fep-submit-post.active-btn").on('click', function() {
-		tinyMCE.triggerSave();
-		var title 			= $("#fep-post-title").val();
-		var content 		= $("#fep-post-content").val();
-		var bio 			= $("#fep-about").val();
-		var category 		= $("#fep-category").val();
-		var tags 			= $("#fep-tags").val();
-		var pid 			= $("#fep-post-id").val();
-		var fimg 			= $("#fep-featured-image-id").val();
-        var marinenotice_location_lat_0 = $('#marinenotice-location-lat-0').val();;
-        var marinenotice_location_long_0 = $('#marinenotice-location-long-0').val();;
-		var nonce 	 		= $("#fepnonce").val();
-		var message_box 	= $('#fep-message');
-		var form_container	= $('#fep-new-post');
-		var submit_btn 		= $('#fep-submit-post');
-		var load_img 		= $("img.fep-loading-img");
-		var submission_form = $('#fep-submission-form');
-		var post_id_input 	= $("#fep-post-id");
-		var errors 			= post_has_errors(title, content, bio, category, tags, fimg);
-		if( errors ){
-			if( form_container.offset().top < $(window).scrollTop() ){
-			$('html, body').animate({ scrollTop: form_container.offset().top-10 }, 'slow'); }
-			message_box.removeClass('success').addClass('warning').html('').show().append(errors);
-			return;
-		}
-		load_img.show();
-		submit_btn.attr("disabled", true).removeClass('active-btn').addClass('passive-btn');
-		$.ajaxSetup({cache:false});
-		$.ajax({
-			type: 'POST',
-			url: fepajaxhandler.ajaxurl,
-			data: {
-				action: 			'fep_process_form_input',
-				post_title: 		title,
-				post_content: 		content,
-				about_the_author: 	bio,
-				post_category: 		category,
-				post_tags: 			tags,
-				post_id: 			pid,
-				featured_img: 		fimg,
-				post_nonce: 		nonce,
-                'marinenotice-location-lat-0': marinenotice_location_lat_0,
-                'marinenotice-location-long-0': marinenotice_location_long_0
-			},
-			success:function(data, textStatus, XMLHttpRequest){
-				hasChanged = false;
-				var arr = $.parseJSON(data);
-				if(arr.success){
-					submission_form.hide();
-					post_id_input.val(arr.post_id);
-					message_box.removeClass('warning').addClass('success');
-				}
-				else
-					message_box.removeClass('success').addClass('warning');
-				message_box.html('').append(arr.message).show();
-				if( form_container.offset().top < $(window).scrollTop() ){
-					$('html, body').animate({ scrollTop: form_container.offset().top-10 }, 'slow');
-				}
-	            load_img.hide();
-				submit_btn.attr("disabled", false).removeClass('passive-btn').addClass('active-btn');
-			},
-			error: function(MLHttpRequest, textStatus, errorThrown){
-				alert(errorThrown);
-			}
-		});
-	});
+        submitForm(jQuery, 'pending');
+    });
+	$("#fep-publish-post.active-btn").on('click', function() {
+        submitForm(jQuery, 'publish');
+    });
 	$('body').on('click', '#fep-continue-editing', function(e){
 		$('#fep-message').hide();
 		$('#fep-submission-form').show();

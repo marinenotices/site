@@ -79,6 +79,7 @@
 			<input type="hidden" id="fep-featured-image-id" value="<?php echo (!empty($featured_img))?$featured_img:'-1'; ?>"/>
 		</div>
 		<input type="hidden" name="post_id" id="fep-post-id" value="<?php echo $post_id ?>">
-		<button type="button" id="fep-submit-post" class="active-btn">Submit</button><img class="fep-loading-img" src="<?php echo plugins_url( 'static/img/ajax-loading.gif', dirname(__FILE__) ); ?>"/>
+		<button type="button" id="fep-submit-post" class="active-btn">Save as Pending</button><img class="fep-loading-img" src="<?php echo plugins_url( 'static/img/ajax-loading.gif', dirname(__FILE__) ); ?>"/>
+		<button type="button" id="fep-publish-post" class="active-btn">Publish</button><img class="fep-loading-img" src="<?php echo plugins_url( 'static/img/ajax-loading.gif', dirname(__FILE__) ); ?>"/>
     </form>
 </div>

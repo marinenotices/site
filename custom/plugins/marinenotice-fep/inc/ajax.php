@@ -146,7 +146,9 @@ function fep_process_form_input(){
 			'post_content' 		=> wp_kses_post($post_content)
 		);
 
-		if( $fep_role_settings['instantly_publish'] && current_user_can( $fep_role_settings['instantly_publish'] ) ){
+        $mode = sanitize_text_field($_POST['mode']);
+
+		if( $mode == 'publish' && $fep_role_settings['instantly_publish'] && current_user_can( $fep_role_settings['instantly_publish'] ) ){
 			$post_action = 'published';
 			$new_post['post_status'] = 'publish';
 		}
