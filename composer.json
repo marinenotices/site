@@ -1,49 +1,51 @@
 {
-    "require": {
-        "psycle-wordpress/wordpress": "*",
-		"wpackagist-plugin/w3-total-cache": "*",
-		"wpackagist-plugin/theme-my-login": "6.4.4",
-		"wpackagist-plugin/wp-user-avatar": "2.0.6"
+  "name": "marinenotice.net",
+  "description": "marinenotice.net configuration.",
+  "require": {
+    "psycle-wordpress/wordpress": "*",
+    "wpackagist-plugin/w3-total-cache": "*",
+    "wpackagist-plugin/theme-my-login": "6.4.4",
+    "wpackagist-plugin/wp-user-avatar": "2.0.6"
+  },
+  "extra": {
+    "installer-paths": {
+      "custom/mu-plugins/{$name}": [
+        "type:wordpress-muplugin"
+      ],
+      "custom/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "custom/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
-    "extra": {
-        "installer-paths": {
-            "custom/mu-plugins/{$name}": [
-                "type:wordpress-muplugin"
-            ],
-            "custom/plugins/{$name}/": [
-                "type:wordpress-plugin"
-            ],
-            "custom/themes/{$name}/": [
-                "type:wordpress-theme"
-            ]
-        },
-        "wordpress-install-dir": {
-            "wordpress/wordpress": "wp"
-        }
+    "wordpress-install-dir": {
+      "wordpress/wordpress": "wp"
+    }
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://gitlab.psycle.com/psycle-wordpress/wordpress.git"
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://gitlab.psycle.com/psycle-wordpress/wordpress.git"
-        },
-        {
-            "type": "composer",
-            "url": "https://wpackagist.org"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "wordpress/wordpress",
-                "type": "wordpress-core",
-                "version": "4.4.2",
-                "source": {
-                    "type": "git",
-                    "url": "https://github.com/WordPress/WordPress.git",
-                    "reference": "4.4.2"
-                }
-            }
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wordpress/wordpress",
+        "type": "wordpress-core",
+        "version": "4.5",
+        "source": {
+          "type": "git",
+          "url": "https://github.com/WordPress/WordPress.git",
+          "reference": "4.5"
         }
-    ],
-    "minimum-stability": "stable",
-    "prefer-stable": true
+      }
+    }
+  ],
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
