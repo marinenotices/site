@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cef6c915f22dfd4467f2e39d63f48cdd",
-    "content-hash": "4339df49dd76b5983f440e231fe55253",
+    "hash": "a77d8ddb5ea442dd8f04c949ab568c12",
+    "content-hash": "8b1d8bf322a7b2a61b3b0bc722ecb883",
     "packages": [
         {
             "name": "composer/installers",
@@ -203,17 +203,27 @@
         },
         {
             "name": "psycle-wordpress/wordpress-core-installer",
-            "version": "1.0.6",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://gitlab.psycle.com/psycle-wordpress/wordpress-core-installer.git",
-                "reference": "97aeff79f6e2d29aae8c8c6b0b92298c57cd5551"
+                "url": "https://github.com/Psycle/wordpress-core-installer.git",
+                "reference": "36b9a26a299ec93e5cb662a596c0e66894dd5eb7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Psycle/wordpress-core-installer/zipball/36b9a26a299ec93e5cb662a596c0e66894dd5eb7",
+                "reference": "36b9a26a299ec93e5cb662a596c0e66894dd5eb7",
+                "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0"
+                "composer-plugin-api": "^1.0",
+                "composer/installers": "@stable"
             },
             "conflict": {
                 "composer/installers": "<1.0.6"
+            },
+            "replace": {
+                "johnpbloch/wordpress-core-installer": "*"
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev"
@@ -227,14 +237,11 @@
                     "psycle\\Composer\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPL-2.0+"
             ],
             "authors": [
-                {
-                    "name": "John P. Bloch",
-                    "email": "me@johnpbloch.com"
-                },
                 {
                     "name": "James Robinson",
                     "email": "james.robinson@psycle.com"
@@ -244,7 +251,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-08-06 14:53:23"
+            "time": "2016-02-19 10:51:45"
         },
         {
             "name": "wordpress/wordpress",
