@@ -7,7 +7,7 @@ Author: Austin Goudge
 Network: True
 */
 
-if (!defined( 'WPINC')) {
+if (!defined('WPINC')) {
     die;
 }
 

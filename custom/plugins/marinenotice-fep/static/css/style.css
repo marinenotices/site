@@ -1,20 +1,20 @@
-#fep-new-post{
-	padding:20px 0;
+#fep-new-post {
+    padding: 20px 0;
 }
 
-#fep-new-post .wp-editor-container{
-	border: 1px solid #DBDBDB;
+#fep-new-post .wp-editor-container {
+    border: 1px solid #DBDBDB;
 }
 
 #fep-new-post #fep-post-title,
 #fep-new-post #fep-tags,
 #fep-new-post #fep-category,
-#fep-new-post #fep-about{
+#fep-new-post #fep-about {
     clear: both;
     margin: 0 0 20px 0;
     padding: 10px;
-	background:#fff;
-	border: 1px solid #DDDDDD;
+    background: #fff;
+    border: 1px solid #DDDDDD;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
 }
 
@@ -25,27 +25,28 @@
 }
 
 #fep-new-post #fep-post-title,
-#fep-new-post #fep-tags{
+#fep-new-post #fep-tags {
     max-width: 96%;
-	width: 600px;
+    width: 600px;
 }
 
-#fep-new-post #fep-category{
+#fep-new-post #fep-category {
     font-size: 14px;
-	width: 300px;
+    width: 300px;
 }
 
-#fep-new-post #fep-about{
-	width:96.5%;
+#fep-new-post #fep-about {
+    width: 96.5%;
 }
 
 #fep-new-post #fep-post-title {
-	font-size: 25px;
+    font-size: 25px;
 }
 
-#fep-new-post .wp-editor-area{
-	background:#FFF;
+#fep-new-post .wp-editor-area {
+    background: #FFF;
 }
+
 #fep-new-post #fep-featured-image {
     background: none repeat scroll 0 0 #ececec;
     border: 1px solid #e1e1e1;
@@ -68,16 +69,17 @@
     margin-bottom: 0;
 }
 
-#wp-fep-post-content-wrap{
-	margin-bottom:20px;
-    margin-top:20px;
+#wp-fep-post-content-wrap {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-img.fep-loading-img{
-	display:none;
-	box-shadow: none;
-	margin-left: 10px;
+img.fep-loading-img {
+    display: none;
+    box-shadow: none;
+    margin-left: 10px;
 }
+
 button#fep-submit-post,
 button#fep-submit-post:active,
 button#fep-submit-post:hover,
@@ -95,47 +97,51 @@ button#fep-publish-post:hover {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
 }
+
 button#fep-submit-post,
 button#fep-publish-post {
-	background: #4785CC;
+    background: #4785CC;
 }
+
 button#fep-submit-post:hover,
 button#fep-publish-post:hover {
-	background: #5391D8;
+    background: #5391D8;
 }
+
 button#fep-submit-post:active,
 button#fep-publish-post:active {
-	padding-top: 12px;
-	padding-bottom: 8px;
-	background: #306EB5;
+    padding-top: 12px;
+    padding-bottom: 8px;
+    background: #306EB5;
 }
+
 button#fep-submit-post.passive-btn,
 button#fep-submit-post.passive-btn:active,
-button#fep-submit-post.passive-btn:hover{
-	background: #e7e7e7;
-	border: 1px solid #d7d7d7;
-	cursor: default;
-	color: #a7a7a7;
-	border-bottom: 3px solid #d7d7d7;
-	font-weight:bold;
+button#fep-submit-post.passive-btn:hover {
+    background: #e7e7e7;
+    border: 1px solid #d7d7d7;
+    cursor: default;
+    color: #a7a7a7;
+    border-bottom: 3px solid #d7d7d7;
+    font-weight: bold;
 }
 
-#no-js, #fep-message{
-	padding:20px;
-	margin-bottom:20px;
-	clear:both;
-	border-radius:5px;
-	-moz-border-radius:5px;
-	-webkit-border-radius:5px;
+#no-js, #fep-message {
+    padding: 20px;
+    margin-bottom: 20px;
+    clear: both;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
-#fep-message{
-	display:none;
+#fep-message {
+    display: none;
 }
 
-#fep-message.warning{
-	background:#FFEBE8;
-	border:1px solid #FFA1A1;
+#fep-message.warning {
+    background: #FFEBE8;
+    border: 1px solid #FFA1A1;
 }
 
 #fep-message.success {
@@ -143,16 +149,17 @@ button#fep-submit-post.passive-btn:hover{
     border: 1px solid #25A825;
 }
 
-.fep-author-bio{
-	width:100%;
-	clear:both;
-	padding: 20px 0;
+.fep-author-bio {
+    width: 100%;
+    clear: both;
+    padding: 20px 0;
 }
 
 #fep-posts > ul {
     list-style: none outside none;
     margin: 0;
 }
+
 #fep-posts li {
     display: table;
     list-style: none outside none;
@@ -160,6 +167,7 @@ button#fep-submit-post.passive-btn:hover{
     padding: 0;
     float: left;
 }
+
 #fep-posts li a {
     background: #F7F7F7;
     border-color: #DCDCDC;
@@ -172,15 +180,16 @@ button#fep-submit-post.passive-btn:hover{
     text-decoration: none;
     margin-bottom: -1px;
 }
+
 #fep-posts li a.active {
-	background: #FFFFFF;
-	border-bottom: 1px solid #FFF;
-	box-shadow: none;
+    background: #FFFFFF;
+    border-bottom: 1px solid #FFF;
+    box-shadow: none;
 }
 
-#fep-posts .fep-fixed-td{
-	width: 40px;
-	text-align: center;
+#fep-posts .fep-fixed-td {
+    width: 40px;
+    text-align: center;
 }
 
 #fep-post-table-container {
@@ -188,13 +197,16 @@ button#fep-submit-post.passive-btn:hover{
     clear: both;
     padding-top: 20px;
 }
-#fep-posts .fep-nav{
-	clear:both;
-	display: block;
+
+#fep-posts .fep-nav {
+    clear: both;
+    display: block;
 }
+
 #fep-posts .fep-nav-link.fep-nav-link-left {
     float: left;
 }
+
 #fep-posts .fep-nav-link.fep-nav-link-right {
     float: right;
 }

@@ -1,17 +1,19 @@
 <?php
 
-class MNPosttypes {
+class MNPosttypes
+{
     /**
      * Register the 'notice' custom post type and its taxonomies.
      */
-    function init() {
-        register_post_type( 'notice',
+    function init()
+    {
+        register_post_type('notice',
             array(
-                'label' => __( 'notices', 'notices' ),
-                'description' => __( 'Marine Notices', 'notices' ),
+                'label' => __('notices', 'notices'),
+                'description' => __('Marine Notices', 'notices'),
                 'labels' => array(
-                    'name' => __( 'Marine Notices' ),
-                    'singular_name' => __( 'Marine Notice' )
+                    'name' => __('Marine Notices'),
+                    'singular_name' => __('Marine Notice')
                 ),
                 'public' => true,
                 'has_archive' => true,
@@ -28,25 +30,25 @@ class MNPosttypes {
             )
         );
 
-        register_taxonomy( 'notice_category', // register custom taxonomy - category
-			'notice',
-			array(
-				'hierarchical' => true,
-				'labels' => array(
-					'name' => 'Notice category',
-					'singular_name' => 'Notice category',
-				)
-			)
-		);
-		register_taxonomy( 'notice_tag', // register custom taxonomy - tag
-			'notice',
-			array(
-				'hierarchical' => false,
-				'labels' => array(
-					'name' => 'Notice tag',
-					'singular_name' => 'Notice tag',
-				)
-			)
-		);
+        register_taxonomy('notice_category', // register custom taxonomy - category
+            'notice',
+            array(
+                'hierarchical' => true,
+                'labels' => array(
+                    'name' => 'Notice category',
+                    'singular_name' => 'Notice category',
+                )
+            )
+        );
+        register_taxonomy('notice_tag', // register custom taxonomy - tag
+            'notice',
+            array(
+                'hierarchical' => false,
+                'labels' => array(
+                    'name' => 'Notice tag',
+                    'singular_name' => 'Notice tag',
+                )
+            )
+        );
     }
 }

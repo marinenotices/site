@@ -26,7 +26,8 @@
  *
  * @author austin
  */
-class MarineNotice {
+class MarineNotice
+{
     protected $pluginDirPath;
 
     private $mnShortcodes;
@@ -35,7 +36,8 @@ class MarineNotice {
     private $mnRoles;
     private $mnKML;
 
-    public function run($pluginDirPath) {
+    public function run($pluginDirPath)
+    {
         $this->pluginDirPath = $pluginDirPath;
 
         $this->mnShortcodes = new MNShortcodes();
@@ -63,7 +65,8 @@ class MarineNotice {
     /**
      * init action to call init functions for our classes.
      */
-    function init() {
+    function init()
+    {
         $this->mnPosttypes->init();
         $this->mnRoles->init();
     }
@@ -72,7 +75,8 @@ class MarineNotice {
     /**
      * wp_enqueue_scripts action to add all extra JS and CSS to the page
      */
-    function enqueueScripts() {
+    function enqueueScripts()
+    {
         wp_register_script('navionics', '//webapiv2.navionics.com/dist/webapi/webapi.min.no-dep.js', array(), false, false);
         wp_register_script('googleMaps', '//maps.googleapis.com/maps/api/js?key=AIzaSyCrRIr0X30B_d2Xp-s7ufCB5wSlvfKHoZI', array(), false, false);
         wp_register_style('navionics', '//webapiv2.navionics.com/dist/webapi/webapi.min.css', array(), false, 'all');
@@ -81,15 +85,16 @@ class MarineNotice {
         wp_enqueue_script('googleMaps');
 
         wp_enqueue_style('navionics');
-        wp_enqueue_style('marinenotice', plugins_url('../css/style.css', __FILE__), array(), '1.1', 'all' );
+        wp_enqueue_style('marinenotice', plugins_url('../css/style.css', __FILE__), array(), '1.1', 'all');
     }
 
     /**
      * add_meta_boxes action to add admin meta boxes for custom postmeta editing.
      */
-    function addMetaBoxes() {
-		add_meta_box('marinenotice-locations', 'Locations', array($this->mnPostmeta, 'generateLocationsMetabox'), 'notice', 'normal', 'high');
-	}
+    function addMetaBoxes()
+    {
+        add_meta_box('marinenotice-locations', 'Locations', array($this->mnPostmeta, 'generateLocationsMetabox'), 'notice', 'normal', 'high');
+    }
 
 
     /**
@@ -97,7 +102,8 @@ class MarineNotice {
      *
      * @param integer $post_id The post ID
      */
-    function savePost($post_id) {
+    function savePost($post_id)
+    {
         if (isset($_POST['marinenotice-locations'])) {
             $this->mnPostmeta->savePost($post_id);
         }
@@ -108,9 +114,10 @@ class MarineNotice {
      *
      * @param WP_Query $query The query object
      */
-    function preGetPosts($query) {
-        if ( $query->is_main_query() && $query->is_author() ) {
-            $query->set( 'post_type', 'notice' );
+    function preGetPosts($query)
+    {
+        if ($query->is_main_query() && $query->is_author()) {
+            $query->set('post_type', 'notice');
         }
     }
 
@@ -119,10 +126,11 @@ class MarineNotice {
      *
      * @global WP_Admin_Bar $wp_admin_bar The admin bar object
      */
-    function beforeAdminBarRender() {
+    function beforeAdminBarRender()
+    {
         global $wp_admin_bar;
 
-        if (!current_user_can( 'manage_options' ) ) {
+        if (!current_user_can('manage_options')) {
             $wp_admin_bar->remove_menu('wp-logo');
             $wp_admin_bar->remove_menu('site-name');
             $wp_admin_bar->remove_menu('new-content');
@@ -133,7 +141,7 @@ class MarineNotice {
         $wp_admin_bar->add_node(array(
             'id' => 'my-account',
             'title' => $newtitle,
-        ) );
+        ));
     }
 
     /**
@@ -142,8 +150,9 @@ class MarineNotice {
      * @param array $args The nav menu args
      * @return array The modified args
      */
-    function navMenuArgs($args = '') {
-        if( is_user_logged_in() ) {
+    function navMenuArgs($args = '')
+    {
+        if (is_user_logged_in()) {
             $args['menu'] = 'main-logged-in';
         } else {
             $args['menu'] = 'main';

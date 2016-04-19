@@ -1,6 +1,7 @@
 <?php
 
-class MNShortcodes {
+class MNShortcodes
+{
     /**
      * Shortcode for displaying a Navionics Map.
      *

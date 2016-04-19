@@ -1,12 +1,15 @@
 <?php
-class MNKML {
+
+class MNKML
+{
     /**
      * do_feed_kml action to generate the KML feed
      */
-    function doFeed() {
-		header('Content-Type: application/xml');
+    function doFeed()
+    {
+        header('Content-Type: application/xml');
 
-	    echo '<?xml version="1.0" encoding="UTF-8"?>
+        echo '<?xml version="1.0" encoding="UTF-8"?>
                 <kml xmlns="http://earth.google.com/kml/2.2">
                 <Document>
                     <name>Notices to Mariners</name>
@@ -19,14 +22,14 @@ class MNKML {
                         </IconStyle>
                     </Style>';
 
-	    $args = array(
+        $args = array(
             'numberposts' => -1,
             'post_status' => 'publish',
             'post_type' => 'notice');
 
-	    $posts = get_posts($args);
+        $posts = get_posts($args);
 
-	    foreach($posts as $post) {
+        foreach ($posts as $post) {
             $data = get_post_meta($post->ID, "marinenotice-locations");
 
             if (isset($data[0])) {
@@ -35,14 +38,14 @@ class MNKML {
                 $index = 1;
                 $count = count($locations);
 
-                foreach($locations as $location) {
+                foreach ($locations as $location) {
                     if ($location['lat'] == "" || $location['long'] == "") {
                         continue;
                     }
 
                     echo "<Placemark>
                             <name>" . $post->post_title . ($count > 1 ? " (" . $index . " of " . $count . ")" : "") . "</name>
-                            <description><![CDATA[For more information <a href='" . $post->guid . "'>click here</a>.  Source: <a href='" . get_author_posts_url( $post->post_author, $author_nicename ) . "'>" . get_the_author_meta( "display_name", $post->post_author ) . "</a>]]></description>
+                            <description><![CDATA[For more information <a href='" . $post->guid . "'>click here</a>.  Source: <a href='" . get_author_posts_url($post->post_author, $author_nicename) . "'>" . get_the_author_meta("display_name", $post->post_author) . "</a>]]></description>
                             <styleUrl>#style1</styleUrl>
                             <Point>
                             <coordinates>" . $location['long'] . "," . $location['lat'] . "</coordinates>
@@ -52,8 +55,8 @@ class MNKML {
                     $index++;
                 }
             }
-	    }
+        }
 
-	    echo "</Document></kml>";
-	}
+        echo "</Document></kml>";
+    }
 }
