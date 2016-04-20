@@ -292,7 +292,8 @@ class MNShortcodes
                 </script>
             ";
         } else {
-            $result = "
+            if ($lat && $long) {
+                $result = "
                 <style>
                     #nautical-map-container {
                         border: 1px solid gray;
@@ -307,18 +308,44 @@ class MNShortcodes
                 <script>
                     var webapi = new JNC.Views.BoatingNavionicsMap({
                         tagId: '#nautical-map-container',
-                        center: [  12.0, 46.0 ],
+                        center: [" . $long . "," . $lat . "],
                         zoom: 0,
-                        /* locale: 'CA', */
                         ZoomControl: true,
                         DistanceControl: false,
                         SonarControl: false,
                         LayerControl: false,
                         navKey: 'Navionics_webapi_01136'
                     });
-                    /*webapi.showSonarControl(true);*/
                     webapi.loadKml('/?feed=kml', false);
                 </script>";
+            } else {
+                $result = "
+                <style>
+                    #nautical-map-container {
+                        border: 1px solid gray;
+                        min-height: 500px;
+                        width: 100%;
+                        height: 100%;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+                </style>
+                <div id='nautical-map-container'></div>
+                <script>
+                    var webapi = new JNC.Views.BoatingNavionicsMap({
+                        tagId: '#nautical-map-container',
+                        center: [12.0, 46.0],
+                        zoom: 0,
+                        ZoomControl: true,
+                        DistanceControl: false,
+                        SonarControl: false,
+                        LayerControl: false,
+                        navKey: 'Navionics_webapi_01136'
+                    });
+                    webapi.loadKml('/?feed=kml', false);
+                </script>";
+
+            }
         }
 
         return $result;
