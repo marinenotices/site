@@ -28,7 +28,7 @@
  */
 class MarineNotice
 {
-    protected $pluginDirPath;
+    public $pluginDirPath;
 
     private $mnShortcodes;
     private $mnPostmeta;
@@ -44,7 +44,7 @@ class MarineNotice
         $this->mnPostmeta = new MNPostmeta();
         $this->mnPosttypes = new MNPosttypes();
         $this->mnRoles = new MNRoles();
-        $this->mnKML = new MNKML();
+        $this->mnKML = new MNKML($this);
 
         // Actions
         add_action('add_meta_boxes', array($this, 'addMetaBoxes'));
