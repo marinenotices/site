@@ -1,0 +1,65 @@
+/*
+ Theme Name:   marinenotice.net Theme
+ Description:  Child of Woothemes 'Hub'
+ Author:       Austin Goudge
+ Template:     hub
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  marinenotice
+*/
+
+/* Fix bug with Canvas theme and Navionics chart overlay on Google Maps */
+#nautical-map-container img {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    background: transparent;
+}
+
+/* Change profile images to be square, not round */
+#post-details .profile-image img {
+    border-radius: 0 ! important;
+    -moz-border-radius: 0 ! important;
+    -webkit-border-radius: 0 ! important;
+}
+
+#post-author .profile-image img {
+    border-radius: 0 ! important;
+    -moz-border-radius: 0 ! important;
+    -webkit-border-radius: 0 ! important;
+}
+
+#comments .avatar img {
+    border-radius: 0 ! important;
+    -moz-border-radius: 0 ! important;
+    -webkit-border-radius: 0 ! important;
+}
+
+/* Override menu text colour */
+ul.nav ul li.current_page_item a,
+ul.nav ul li.current_page_parent a,
+ul.nav ul li.current-menu-ancestor a,
+ul.nav ul li.current-cat a,
+ul.nav ul li.current-menu-item a,
+#navigation ul.cart .cart_list a {
+    color: #428bca ! important;
+}
+
+ul.nav li.current_page_item a,
+ul.nav li.current_page_parent a,
+ul.nav li.current-menu-ancestor a,
+ul.nav li.current-cat a,
+ul.nav li.current-menu-item a {
+    color: #428bca ! important;
+}
+
+/* Make columns in FEE a bit wider to accommodate 'Edit', 'View' and 'Delete' links */
+#fep-posts .fep-fixed-td {
+    width: 60px;
+}
+
+/* Reduce size of user profile bio text */
+div.profile-content {
+    font-size: 0.7em;
+}
