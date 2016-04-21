@@ -82,6 +82,7 @@ span.mnlogo {
 /* Authors (authorities) page */
 .authors div.user-data {
     clear: both;
+    padding-bottom: 2em;
 }
 
 .authors div.user-avatar {
