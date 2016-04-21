@@ -63,6 +63,12 @@ ul.nav li.current-menu-item a {
 div.profile-content {
     font-size: 0.7em;
 }
+
+/* Header image tweak for SVG */
+#header #logo img {
+    height: 250px;
+}
+
 /* Small logo */
 span.mnlogo {
     background-image: url("/custom/uploads/2016/04/logo.svg");
