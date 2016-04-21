@@ -78,4 +78,23 @@ span.mnlogo {
     font-family: "Gill Sans";
     font-size: 1.1em;
 }
+
+/* Authors (authorities) page */
+.authors div.user-data {
+    clear: both;
+}
+
+.authors div.user-avatar {
+    display: block;
+    float: left;
+    width: 110px;
+    height: 100%;
+    padding: 0.5em 0 0.5em 0;
+}
+
+.authors img.avatar {
+    float: left;
+    padding: 5px;
+    border: solid 1px grey;
+    margin: 0 20px 10px 0;
 }
