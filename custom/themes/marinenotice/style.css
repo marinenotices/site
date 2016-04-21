@@ -74,5 +74,8 @@ span.mnlogo {
     background-image: url("/custom/uploads/2016/04/logo.svg");
     background-repeat: no-repeat;
     color: #0A246A;
-    padding-left: 38px;
+    padding-left: 2.2em;
+    font-family: "Gill Sans";
+    font-size: 1.1em;
+}
 }
