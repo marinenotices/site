@@ -60,6 +60,7 @@ class MarineNotice
 
         // Shortcodes
         add_shortcode('navionics', array($this->mnShortcodes, 'navionicsMapShortcode'));
+        add_shortcode('mnlogo', array($this->mnShortcodes, 'logoShortcode'));
     }
 
     /**

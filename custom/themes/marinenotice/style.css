@@ -63,3 +63,10 @@ ul.nav li.current-menu-item a {
 div.profile-content {
     font-size: 0.7em;
 }
+/* Small logo */
+span.mnlogo {
+    background-image: url("/custom/uploads/2016/04/logo.svg");
+    background-repeat: no-repeat;
+    color: #0A246A;
+    padding-left: 38px;
+}

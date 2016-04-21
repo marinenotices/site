@@ -3,6 +3,16 @@
 class MNShortcodes
 {
     /**
+     * Shortcode for displaying the marinenotice.net logo
+     *
+     * @param $attrs The shortcode attributes
+     * @return string The content to inject
+     */
+    function logoShortcode($attrs) {
+        return '<span class="mnlogo">marinenotice.net</span>';
+    }
+
+    /**
      * Shortcode for displaying a Navionics Map.
      *
      * @example <code>[navionics]</code> produces a simple Navionics map
