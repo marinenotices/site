@@ -99,3 +99,16 @@ span.mnlogo {
     border: solid 1px grey;
     margin: 0 20px 10px 0;
 }
+
+/* Featured images */
+img.attachment-post-thumbnail {
+    float: right;
+    padding: 5px;
+    margin: 10px;
+    border: solid 1px grey;
+}
+
+/* Not sure why singles were set to about 70% page width, but don't. */
+.single article {
+    width: 100% ! important;
+}
