@@ -5,7 +5,7 @@
     "psycle-wordpress/wordpress": "*",
     "wpackagist-plugin/w3-total-cache": "*",
     "wpackagist-plugin/theme-my-login": "6.4.4",
-    "wpackagist-plugin/wp-user-avatar": "2.0.6",
+    "wpackagist-plugin/wp-user-avatar": "2.0.7",
     "wpackagist-plugin/svg-support": "2.2.2",
     "wpackagist-plugin/tinymce-advanced": "4.3.8"
   },

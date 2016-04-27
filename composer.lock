@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8a4affcef561d6b65b4f2bbe774dcab7",
-    "content-hash": "c24ab67c53697dd5973799dabc8b2000",
+    "hash": "750467cd814dfeb862cb708e5cf89352",
+    "content-hash": "98e9c038e3ae456fb800cd8f18d3c460",
     "packages": [
         {
             "name": "composer/installers",
@@ -365,7 +365,7 @@
         },
         {
             "name": "wpackagist-plugin/wp-user-avatar",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-user-avatar/",
