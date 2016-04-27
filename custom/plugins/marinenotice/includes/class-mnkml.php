@@ -137,7 +137,7 @@ class MNKML {
                             <hotSpot x="0" y="0" xunits="fraction" yunits="fraction"/>
                         </IconStyle>
                     </Style>
-                    <Style id="marker-miscellaneous">
+                    <Style id="marker-other-misc">
                         <IconStyle>
                             <Icon><href>' . plugins_url('../images/marker-miscellaneous.svg', __FILE__) . '</href></Icon>
                             <scale>0.05</scale>
