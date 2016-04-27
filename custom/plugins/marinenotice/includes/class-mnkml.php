@@ -102,6 +102,13 @@ class MNKML {
                             <hotSpot x="0" y="0" xunits="fraction" yunits="fraction"/>
                         </IconStyle>
                     </Style>
+                    <Style id="marker-light-inoperative">
+                        <IconStyle>
+                            <Icon><href>' . plugins_url('../images/marker-light-removed.svg', __FILE__) . '</href></Icon>
+                            <scale>0.05</scale>
+                            <hotSpot x="0" y="0" xunits="fraction" yunits="fraction"/>
+                        </IconStyle>
+                    </Style>
                     <Style id="marker-work-construction">
                         <IconStyle>
                             <Icon><href>' . plugins_url('../images/marker-work-construction.svg', __FILE__) . '</href></Icon>
