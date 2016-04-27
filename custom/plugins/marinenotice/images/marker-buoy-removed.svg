@@ -18,7 +18,7 @@
 </font>
 
 	<g id="big_blue_marker">
-	<polyline fill="#FFFFFF" stroke="#7596EA" stroke-width="6" points="78.4,118 3.1,135.6 11.5,60.7 	"/>
+	<path fill="#FFFFFF" stroke="#7596EA" stroke-width="6" d="M78.4,118L3.1,135.6l8.4-74.9"/>
 	<circle fill="#FFFFFF" stroke="#7596EA" stroke-width="6" cx="69.4" cy="61.3" r="57.7"/>
 </g>
 <g id="orange_marker_copy" display="none">
@@ -47,10 +47,10 @@
 <g id="tick" display="none">
 	<text transform="matrix(1 0 0 1 49.3996 81.6462)" display="inline" font-family="'LucidaGrande'" font-size="55px">✓</text>
 </g>
-<g id="wreck-bottomleft">
-	<path id="path2748_1_" d="M74.1,37.8l-11,32.9L25.1,57.8L35.8,83h-6v4.4H51c1.1,4.2,4.8,7.3,9.4,7.3s8.3-3.1,9.4-7.3h36.7V83h-5.7
-		L67,71.8l11-32.9L74.1,37.8z M60.4,79.2c3.2,0,5.8,2.6,5.8,5.8c0,3.2-2.6,5.8-5.8,5.8s-5.8-2.6-5.8-5.8
-		C54.6,81.8,57.2,79.2,60.4,79.2z"/>
+<g id="wreck-bottomleft" display="none">
+	<path id="path2748_1_" display="inline" d="M74.1,37.8l-11,32.9L25.1,57.8L35.8,83h-6v4.4H51c1.1,4.2,4.8,7.3,9.4,7.3
+		s8.3-3.1,9.4-7.3h36.7V83h-5.7L67,71.8l11-32.9L74.1,37.8z M60.4,79.2c3.2,0,5.8,2.6,5.8,5.8c0,3.2-2.6,5.8-5.8,5.8
+		s-5.8-2.6-5.8-5.8C54.6,81.8,57.2,79.2,60.4,79.2z"/>
 </g>
 <g id="wreck-center" display="none">
 	<path id="path2748" display="inline" d="M82.1,35.8l-11,32.9L33.1,55.8L43.8,81h-6v4.4H59c1.1,4.2,4.8,7.3,9.4,7.3
@@ -78,23 +78,23 @@
 		c-4.7,0-8.6,3.2-9.6,7.6H39.5L49.1,53.4z M59.9,78.9c3.3,0,5.9,2.6,5.9,5.9c0,3.3-2.6,5.9-5.9,5.9c-3.3,0-5.9-2.6-5.9-5.9
 		C54,81.6,56.6,78.9,59.9,78.9z"/>
 </g>
-<g id="buoy-center" display="none">
-	<path id="buoy" display="inline" fill="#000407" d="M54.2,37.6l-12,36h-6.3v4.5h23.4c1,4.4,4.9,7.6,9.6,7.6c4.7,0,8.6-3.2,9.6-7.6
-		h23.5v0v-4.4h-6l7.1-20.6L54.2,37.6z M58.1,44.4L95.3,57l-5.7,16.6H78.4c-1-4.4-4.9-7.6-9.6-7.6c-4.7,0-8.6,3.2-9.6,7.6H48.5
-		L58.1,44.4z M68.9,69.9c3.3,0,5.9,2.6,5.9,5.9c0,3.3-2.6,5.9-5.9,5.9S63,79.1,63,75.8C63,72.6,65.6,69.9,68.9,69.9z"/>
-	<g id="cross" display="inline">
+<g id="buoy-center">
+	<path id="buoy" fill="#000407" d="M54.2,37.6l-12,36h-6.3v4.5h23.4c1,4.4,4.9,7.6,9.6,7.6c4.7,0,8.6-3.2,9.6-7.6h23.5v0v-4.4h-6
+		l7.1-20.6L54.2,37.6z M58.1,44.4L95.3,57l-5.7,16.6H78.4c-1-4.4-4.9-7.6-9.6-7.6c-4.7,0-8.6,3.2-9.6,7.6H48.5L58.1,44.4z
+		 M68.9,69.9c3.3,0,5.9,2.6,5.9,5.9c0,3.3-2.6,5.9-5.9,5.9S63,79.1,63,75.8C63,72.6,65.6,69.9,68.9,69.9z"/>
+	<g id="cross">
 	</g>
+</g>
+<g id="removed">
+	<line opacity="0.8" fill="#FFFFFF" stroke="#870000" stroke-width="8" x1="32.7" y1="25.8" x2="107.5" y2="95"/>
 </g>
 <g id="works" display="none">
 	<path display="inline" fill="#870000" stroke="#000000" stroke-width="7" d="M82,26.2C67.2,47.8,56.5,50.7,56.5,50.7l-7.4-8.1
 		L42.4,50L42,61.4l13.3,3l7.8-6.3"/>
 </g>
-<g id="removed" display="none">
-	<line display="inline" opacity="0.8" fill="#FFFFFF" stroke="#870000" stroke-width="8" x1="32.7" y1="25.8" x2="107.5" y2="95"/>
-</g>
-<g id="added">
-	<line fill="#FFFFFF" stroke="#00D215" stroke-width="8" x1="82.2" y1="48.5" x2="82.2" y2="15.5"/>
-	<line fill="#FFFFFF" stroke="#00D215" stroke-width="8" x1="98.7" y1="32" x2="65.7" y2="32"/>
+<g id="added" display="none">
+	<line display="inline" fill="#FFFFFF" stroke="#00D215" stroke-width="8" x1="83.2" y1="45.5" x2="83.2" y2="12.5"/>
+	<line display="inline" fill="#FFFFFF" stroke="#00D215" stroke-width="8" x1="99.7" y1="29" x2="66.7" y2="29"/>
 </g>
 <g id="moved_1_" display="none">
 	<g display="inline">
@@ -109,6 +109,6 @@
 </g>
 <g id="missing" display="none">
 	
-		<text transform="matrix(1 0 0 1 72.1426 49.6852)" display="inline" fill="#1D3176" font-family="'MyriadPro-Bold'" font-size="51px">?</text>
+		<text transform="matrix(1 0 0 1 73.1426 47.6852)" display="inline" fill="#1D3176" font-family="'MyriadPro-Bold'" font-size="51px">?</text>
 </g>
 </svg>

@@ -92,12 +92,12 @@
 <g id="removed" display="none">
 	<line display="inline" opacity="0.8" fill="#FFFFFF" stroke="#870000" stroke-width="8" x1="32.7" y1="25.8" x2="107.5" y2="95"/>
 </g>
-<g id="added">
-	<line fill="#FFFFFF" stroke="#00D215" stroke-width="8" x1="82.2" y1="48.5" x2="82.2" y2="15.5"/>
-	<line fill="#FFFFFF" stroke="#00D215" stroke-width="8" x1="98.7" y1="32" x2="65.7" y2="32"/>
+<g id="added" display="none">
+	<line display="inline" fill="#FFFFFF" stroke="#00D215" stroke-width="8" x1="82.2" y1="48.5" x2="82.2" y2="15.5"/>
+	<line display="inline" fill="#FFFFFF" stroke="#00D215" stroke-width="8" x1="98.7" y1="32" x2="65.7" y2="32"/>
 </g>
-<g id="moved_1_" display="none">
-	<g display="inline">
+<g id="moved_1_">
+	<g>
 		<line fill="#FFFFFF" x1="60.4" y1="85" x2="106.5" y2="25.8"/>
 		<g>
 			<line fill="none" stroke="#870000" stroke-width="8" x1="60.4" y1="85" x2="96.4" y2="38.8"/>
