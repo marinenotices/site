@@ -112,3 +112,38 @@ img.attachment-post-thumbnail {
 .single article {
     width: 100% ! important;
 }
+
+/* Marker key tables on home page */
+table.marker-key {
+    table-layout: auto;
+    font-size: 0.7em;
+    width: 32%;
+    min-width: 20%;
+    max-width: 32%;
+    display: inline-table;
+}
+
+table.marker-key-padded {
+    margin-right: 1%;
+}
+
+table.marker-key-right {
+    float: right;
+}
+
+table.marker-key img.marker {
+    width: 2em ! important;
+    max-width: 2em ! important;
+    margin: 0 ! important;
+}
+
+table.marker-key h3 {
+    margin: 0 ! important;
+}
+
+table.marker-key tr td:first-child {
+    min-width: 2em ! important;
+    max-width: 2em ! important;
+    width: 2em ! important;
+    column-width: 2em ! important;
+}
