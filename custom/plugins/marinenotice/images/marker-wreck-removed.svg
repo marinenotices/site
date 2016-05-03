@@ -1,114 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 138.5 139.5" enable-background="new 0 0 138.5 139.5" xml:space="preserve">
-<font horiz-adv-x="2048">
-<!-- Lucida is a registered trademark of Bigelow &amp; Holmes Inc. -->
-<!-- Copyright: Copyright 2016 Adobe System Incorporated. All rights reserved. -->
-<font-face font-family="LucidaGrande" units-per-em="2048" underline-position="-200" underline-thickness="100"/>
-<missing-glyph horiz-adv-x="1536" d="M256,0l0,1280l1024,0l0,-1280M320,64l896,0l0,1152l-896,0z"/>
-<glyph unicode="&#x2713;" horiz-adv-x="1565" d="M632,-37C570,75 522,157 489,210l-53,83l-40,61C309,490 218,602 123,691C177,736 227,758 274,758C331,758 382,737 427,695C472,653 528,573 596,455C673,706 772,945 891,1170C957,1293 1016,1375 1068,1418C1119,1460 1188,1481 1273,1481C1318,1481 1374,1474 1441,1460C1270,1322 1133,1158 1030,968C927,778 795,443 632,-37z"/>
-</font>
-
-	<font horiz-adv-x="1000">
-<!-- Copyright 1992, 1994, 1997, 2000, 2004 Adobe Systems Incorporated. All rights reserved. Myriad is either a registered trademark or a trademark of Adobe Systems Incorporated in the United States and/or other countries. -->
-<font-face font-family="MyriadPro-Bold" units-per-em="1000" underline-position="-100" underline-thickness="50"/>
-<missing-glyph horiz-adv-x="500" d="M0,0l500,0l0,700l-500,0M250,395l-170,255l340,0M280,350l170,255l0,-510M80,50l170,255l170,-255M50,605l170,-255l-170,-255z"/>
-<glyph unicode="?" horiz-adv-x="445" d="M271,218l0,18C270,281 285,320 322,361C360,403 407,453 407,529C407,612 347,685 215,685C144,685 84,665 48,644l34,-109C108,553 148,565 181,565C231,563 254,540 254,505C254,471 228,439 196,401C151,347 134,295 137,244l1,-26M201,-11C255,-11 291,28 291,80C290,133 255,171 201,171C149,171 112,133 112,80C112,28 148,-11 201,-11z"/>
-</font>
-
-	<g id="big_blue_marker">
-	<polyline fill="#FFFFFF" stroke="#7596EA" stroke-width="6" points="78.4,118 3.1,135.6 11.5,60.7 	"/>
-	<circle fill="#FFFFFF" stroke="#7596EA" stroke-width="6" cx="69.4" cy="61.3" r="57.7"/>
-</g>
-<g id="orange_marker_copy" display="none">
-	<path display="inline" fill="none" stroke="#000000" stroke-width="3" d="M64.7,81.1"/>
-	<path display="inline" fill="#F2756A" d="M69.6,138.7c1-19.2,11.5-50.3,26.8-69.8c8.3-10.7,12.2-21.1,12.2-27.4
-		c0-21.9-17.6-39.7-39.2-39.7h0c-21.6,0-39.2,17.8-39.2,39.7c0,6.3,3.8,16.7,12.2,27.4c15.3,19.6,25.8,50.7,26.8,69.8H69.6z"/>
-	<path display="inline" fill="#B33623" d="M71.1,140.2h-3.3l-0.1-1.4c-0.9-18.4-11.1-49.3-26.5-69C32,58,28.7,47.4,28.7,41.5
-		C28.7,18.8,47,0.3,69.4,0.3c22.4,0,40.7,18.5,40.7,41.2c0,6-3.3,16.5-12.5,28.3c-15.4,19.7-25.6,50.5-26.5,69L71.1,140.2
-		L71.1,140.2z M69.4,3.3c-20.8,0-37.7,17.1-37.7,38.2c0,5.2,3.1,15.3,11.8,26.4c13.1,16.7,22.5,41.3,25.9,60
-		c3.4-18.7,12.8-43.3,25.9-60c8.7-11.2,11.8-21.2,11.8-26.4C107.1,20.4,90.2,3.3,69.4,3.3L69.4,3.3z"/>
-</g>
-<g id="green_marker" display="none">
-	<path display="inline" fill="none" stroke="#000000" stroke-width="3" d="M69.4,81.1"/>
-	<g display="inline">
-		<path fill="#5FB74F" d="M69.6,138.7c1-19.2,11.5-50.3,26.8-69.8c8.3-10.7,12.2-21.1,12.2-27.4c0-21.9-17.6-39.7-39.2-39.7h0
-			c-21.6,0-39.2,17.8-39.2,39.7c0,6.3,3.8,16.7,12.2,27.4c15.3,19.6,25.8,50.7,26.8,69.8H69.6z"/>
-		<path d="M71.1,140.2h-3.3l-0.1-1.4c-0.9-18.4-11.1-49.3-26.5-69C32,58,28.7,47.4,28.7,41.5C28.7,18.8,47,0.3,69.4,0.3
-			c22.4,0,40.7,18.5,40.7,41.2c0,6-3.3,16.5-12.5,28.3c-15.4,19.7-25.6,50.5-26.5,69L71.1,140.2L71.1,140.2z M69.4,3.3
-			c-20.8,0-37.7,17.1-37.7,38.2c0,5.2,3.1,15.3,11.8,26.4c13.1,16.7,22.5,41.3,25.9,60c3.4-18.7,12.8-43.3,25.9-60
-			c8.7-11.2,11.8-21.2,11.8-26.4C107.1,20.4,90.2,3.3,69.4,3.3L69.4,3.3z"/>
-	</g>
-</g>
-<g id="dot" display="none">
-	<circle display="inline" cx="69.4" cy="61.3" r="16.6"/>
-</g>
-<g id="tick" display="none">
-	<text transform="matrix(1 0 0 1 49.3996 81.6462)" display="inline" font-family="'LucidaGrande'" font-size="55px">✓</text>
-</g>
-<g id="wreck-bottomleft" display="none">
-	<path id="path2748_1_" display="inline" d="M74.1,37.8l-11,32.9L25.1,57.8L35.8,83h-6v4.4H51c1.1,4.2,4.8,7.3,9.4,7.3
-		s8.3-3.1,9.4-7.3h36.7V83h-5.7L67,71.8l11-32.9L74.1,37.8z M60.4,79.2c3.2,0,5.8,2.6,5.8,5.8c0,3.2-2.6,5.8-5.8,5.8
-		s-5.8-2.6-5.8-5.8C54.6,81.8,57.2,79.2,60.4,79.2z"/>
-</g>
-<g id="wreck-center">
-	<path id="path2748" d="M80.1,28.8l-11,32.9L31.1,48.8L41.8,74h-6v4.4H57c1.1,4.2,4.8,7.3,9.4,7.3c4.5,0,8.3-3.1,9.4-7.3h36.7V74
-		h-5.7L73,62.8l11-32.9L80.1,28.8z M66.4,70.2c3.2,0,5.8,2.6,5.8,5.8c0,3.2-2.6,5.8-5.8,5.8c-3.2,0-5.8-2.6-5.8-5.8
-		C60.6,72.8,63.2,70.2,66.4,70.2z"/>
-</g>
-<g id="light-bottomleft" display="none">
-	<path id="path10928" display="inline" fill="#A30075" d="M52.6,78.1L26.8,52.7l-1.9-1.9l-1.4-2.2L23,46l0.3-2.7l1.1-2.4l1.8-2
-		l2.4-1.3l2.7-0.6l2.6,0.3l2.1,1.2l1.8,1.9l1.6,2.2l0.3,0.5L52.6,78.1z M61,89.3c0,0.8-0.7,1.5-1.5,1.5c-0.8,0-1.5-0.7-1.5-1.5
-		c0-0.8,0.7-1.5,1.5-1.5C60.4,87.8,61,88.5,61,89.3z"/>
-	<path id="path12984" display="inline" fill="#000407" d="M49,102.5l4.1-11.8l-10-7.1h12.2l3.9-11.7l3.7,11.7h12.3l-10,7.3l3.7,11.7
-		l-9.8-7.3L49,102.5z M62.5,88.9c0,1.8-1.5,3.3-3.3,3.3c-1.8,0-3.3-1.5-3.3-3.3c0-1.8,1.5-3.3,3.3-3.3C61,85.5,62.5,87,62.5,88.9z"
-		/>
-</g>
-<g id="light-center" display="none">
-	<path id="path10928_1_" display="inline" fill="#A30075" d="M68.5,69L42.6,43.6l-1.9-1.9l-1.4-2.2l-0.5-2.6l0.3-2.7l1.1-2.4l1.8-2
-		l2.4-1.3l2.7-0.6l2.6,0.3l2.1,1.2l1.8,1.9l1.6,2.2l0.3,0.5L68.5,69z M76.9,80.2c0,0.8-0.7,1.5-1.5,1.5s-1.5-0.7-1.5-1.5
-		s0.7-1.5,1.5-1.5S76.9,79.4,76.9,80.2z"/>
-	<path id="path12984_1_" display="inline" fill="#000407" d="M64.9,93.4l4.1-11.8l-10-7.1h12.2L75,62.8l3.7,11.7h12.3l-10,7.3
-		l3.7,11.7L75,86.1L64.9,93.4z M78.3,79.7c0,1.8-1.5,3.3-3.3,3.3s-3.3-1.5-3.3-3.3s1.5-3.3,3.3-3.3S78.3,77.9,78.3,79.7z"/>
-</g>
-<g id="buoy-bottomleft" display="none">
-	<path id="buoy_1_" display="inline" fill="#000407" d="M45.2,46.6l-12,36h-6.3v4.5h23.4c1,4.4,4.9,7.6,9.6,7.6
-		c4.7,0,8.6-3.2,9.6-7.6h23.5v0v-4.4h-6L93.9,62L45.2,46.6z M49.1,53.4L86.3,66l-5.7,16.6H69.4c-1-4.4-4.9-7.6-9.6-7.6
-		c-4.7,0-8.6,3.2-9.6,7.6H39.5L49.1,53.4z M59.9,78.9c3.3,0,5.9,2.6,5.9,5.9c0,3.3-2.6,5.9-5.9,5.9c-3.3,0-5.9-2.6-5.9-5.9
-		C54,81.6,56.6,78.9,59.9,78.9z"/>
-</g>
-<g id="buoy-center" display="none">
-	<path id="buoy" display="inline" fill="#000407" d="M54.2,37.6l-12,36h-6.3v4.5h23.4c1,4.4,4.9,7.6,9.6,7.6c4.7,0,8.6-3.2,9.6-7.6
-		h23.5v0v-4.4h-6l7.1-20.6L54.2,37.6z M58.1,44.4L95.3,57l-5.7,16.6H78.4c-1-4.4-4.9-7.6-9.6-7.6c-4.7,0-8.6,3.2-9.6,7.6H48.5
-		L58.1,44.4z M68.9,69.9c3.3,0,5.9,2.6,5.9,5.9c0,3.3-2.6,5.9-5.9,5.9S63,79.1,63,75.8C63,72.6,65.6,69.9,68.9,69.9z"/>
-	<g id="cross" display="inline">
-	</g>
-</g>
-<g id="works" display="none">
-	<path display="inline" fill="#870000" stroke="#000000" stroke-width="7" d="M82,26.2C67.2,47.8,56.5,50.7,56.5,50.7l-7.4-8.1
-		L42.4,50L42,61.4l13.3,3l7.8-6.3"/>
-</g>
-<g id="removed">
-	<line opacity="0.8" fill="#FFFFFF" stroke="#870000" stroke-width="8" x1="32.7" y1="25.8" x2="107.5" y2="95"/>
-</g>
-<g id="added" display="none">
-	<line display="inline" fill="#FFFFFF" stroke="#00D215" stroke-width="8" x1="82.2" y1="48.5" x2="82.2" y2="15.5"/>
-	<line display="inline" fill="#FFFFFF" stroke="#00D215" stroke-width="8" x1="98.7" y1="32" x2="65.7" y2="32"/>
-</g>
-<g id="moved_1_" display="none">
-	<g display="inline">
-		<line fill="#FFFFFF" x1="60.4" y1="85" x2="106.5" y2="25.8"/>
-		<g>
-			<line fill="none" stroke="#870000" stroke-width="8" x1="60.4" y1="85" x2="96.4" y2="38.8"/>
-			<g>
-				<polygon fill="#870000" points="106.5,25.8 99.7,49.8 95.7,39.7 84.9,38.2 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g id="missing" display="none">
-	
-		<text transform="matrix(1 0 0 1 72.1426 49.6852)" display="inline" fill="#1D3176" font-family="'MyriadPro-Bold'" font-size="51px">?</text>
-</g>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="130.5px" height="138.9px" viewBox="0 0 130.5 138.9" enable-background="new 0 0 130.5 138.9"
+	 xml:space="preserve">
+<defs>
+</defs>
+<polyline fill="#FFFFFF" stroke="#7596EA" stroke-width="6" points="78.7,117.4 3.5,135 11.9,60.1 "/>
+<circle fill="#FFFFFF" stroke="#7596EA" stroke-width="6" cx="69.8" cy="60.7" r="57.7"/>
+<path id="path2748_1_" d="M80.5,28.3l-11,32.9L31.4,48.3l10.7,25.2h-6v4.4h21.2c1.1,4.2,4.8,7.3,9.4,7.3c4.5,0,8.3-3.1,9.4-7.3h36.7
+	v-4.4H107L73.3,62.2l11-32.9L80.5,28.3z M66.7,69.7c3.2,0,5.8,2.6,5.8,5.8c0,3.2-2.6,5.8-5.8,5.8c-3.2,0-5.8-2.6-5.8-5.8
+	C60.9,72.3,63.5,69.7,66.7,69.7z"/>
+<line opacity="0.8" fill="#FFFFFF" stroke="#FF0000" stroke-width="8" x1="33" y1="25.3" x2="107.8" y2="94.4"/>
 </svg>
