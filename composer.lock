@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "750467cd814dfeb862cb708e5cf89352",
-    "content-hash": "98e9c038e3ae456fb800cd8f18d3c460",
+    "hash": "4cc88c5b5aab97d0085cefd7f91cc321",
+    "content-hash": "165fb37a9c5b64c8a4b785432446c41e",
     "packages": [
         {
             "name": "composer/installers",
@@ -325,15 +325,15 @@
         },
         {
             "name": "wpackagist-plugin/tinymce-advanced",
-            "version": "4.3.8",
+            "version": "4.3.10.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/tinymce-advanced/",
-                "reference": "tags/4.3.8"
+                "reference": "tags/4.3.10.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.3.8.zip",
+                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.3.10.1.zip",
                 "reference": null,
                 "shasum": null
             },
