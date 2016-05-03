@@ -1,0 +1,24 @@
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="177.5px" height="138.9px" viewBox="0 0 177.5 138.9" enable-background="new 0 0 177.5 138.9"
+	 xml:space="preserve">
+<font horiz-adv-x="1000">
+<!-- Copyright 1992, 1994, 1997, 2000, 2004 Adobe Systems Incorporated. All rights reserved. Myriad is either a registered trademark or a trademark of Adobe Systems Incorporated in the United States and/or other countries. -->
+<font-face font-family="MyriadPro-Bold" units-per-em="1000" underline-position="-100" underline-thickness="50"/>
+<missing-glyph horiz-adv-x="500" d="M0,0l500,0l0,700l-500,0M250,395l-170,255l340,0M280,350l170,255l0,-510M80,50l170,255l170,-255M50,605l170,-255l-170,-255z"/>
+<glyph unicode="!" horiz-adv-x="268" d="M191,221l22,453l-159,0l23,-453M134,-11C188,-11 223,28 223,80C222,133 187,171 134,171C81,171 44,133 44,80C44,28 80,-11 134,-11z"/>
+</font>
+
+	<defs>
+</defs>
+<g>
+	<polyline fill="#FFFFFF" stroke="#7596EA" stroke-width="6" points="78.7,117.4 3.5,135 11.9,60.1 	"/>
+	<circle fill="#FFFFFF" stroke="#7596EA" stroke-width="6" cx="69.8" cy="60.7" r="57.7"/>
+	<g>
+		<polygon fill="#FF0000" stroke="#000000" stroke-width="7" stroke-linejoin="round" stroke-miterlimit="20" points="26.4,85.9 
+			69.8,10.8 113.1,85.9 		"/>
+		<text transform="matrix(1 0 0 1 61.8194 78.1899)" fill="#FFFFFF" font-family="'MyriadPro-Bold'" font-size="64.1925px">!</text>
+	</g>
+</g>
+</svg>

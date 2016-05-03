@@ -151,6 +151,20 @@ class MNKML {
                             <hotSpot x="0" y="0" xunits="fraction" yunits="fraction"/>
                         </IconStyle>
                     </Style>
+                    <Style id="marker-other-event">
+                        <IconStyle>
+                            <Icon><href>' . plugins_url('../images/marker-other-event.svg', __FILE__) . '</href></Icon>
+                            <scale>0.05</scale>
+                            <hotSpot x="0" y="0" xunits="fraction" yunits="fraction"/>
+                        </IconStyle>
+                    </Style>
+                    <Style id="marker-other-warning">
+                        <IconStyle>
+                            <Icon><href>' . plugins_url('../images/marker-other-warning.svg', __FILE__) . '</href></Icon>
+                            <scale>0.05</scale>
+                            <hotSpot x="0" y="0" xunits="fraction" yunits="fraction"/>
+                        </IconStyle>
+                    </Style>
                     ';
 
         $args = array(
