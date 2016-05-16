@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b3aeff775e0588a54692c67f7b3b464c",
-    "content-hash": "9b07dbaba94549496e343194a1a9016e",
+    "hash": "fa272c983e69fa564e513ce3a8d2c782",
+    "content-hash": "cb94374a8b61d829525d52e2e7d39403",
     "packages": [
         {
             "name": "composer/installers",
@@ -262,6 +262,26 @@
                 "reference": "4.5.2"
             },
             "type": "wordpress-core"
+        },
+        {
+            "name": "wpackagist-plugin/cookie-notice",
+            "version": "1.2.35",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cookie-notice/",
+                "reference": "tags/1.2.35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cookie-notice.1.2.35.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cookie-notice/"
         },
         {
             "name": "wpackagist-plugin/post-expirator",
