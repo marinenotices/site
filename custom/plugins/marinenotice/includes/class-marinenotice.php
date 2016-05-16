@@ -57,6 +57,7 @@ class MarineNotice
 
         // Filters
         add_filter('wp_nav_menu_args', array($this, 'navMenuArgs'));
+        add_filter('query_vars', array($this, 'queryVars'));
 
         // Shortcodes
         add_shortcode('navionics', array($this->mnShortcodes, 'navionicsMapShortcode'));
@@ -154,13 +155,24 @@ class MarineNotice
     function navMenuArgs($args = '')
     {
         if (is_array($args) && $args['theme_location'] == 'primary-menu') {
-        if (is_user_logged_in()) {
-            $args['menu'] = 'main-logged-in';
-        } else {
-            $args['menu'] = 'main';
-        }
+            if (is_user_logged_in()) {
+                $args['menu'] = 'main-logged-in';
+            } else {
+                $args['menu'] = 'main';
+            }
         }
 
         return $args;
+    }
+
+    /**
+     * query_vars filter to add custom query variables
+     *
+     * @param array $vars The current query variables
+     * @return array The modified query variables
+     */
+    function queryVars($vars) {
+        $vars[] = 'aID';
+        return $vars;
     }
 }

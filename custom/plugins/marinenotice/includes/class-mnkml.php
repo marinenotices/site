@@ -172,6 +172,12 @@ class MNKML {
             'post_status' => 'publish',
             'post_type' => 'notice');
 
+        $authorityID = get_query_var('aID', '');
+
+        if ($authorityID != '') {
+            $args['author'] = $authorityID;
+        }
+
         $posts = get_posts($args);
 
         foreach ($posts as $post) {
