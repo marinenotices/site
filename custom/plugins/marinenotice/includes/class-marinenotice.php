@@ -153,10 +153,12 @@ class MarineNotice
      */
     function navMenuArgs($args = '')
     {
+        if (is_array($args) && $args['theme_location'] == 'primary-menu') {
         if (is_user_logged_in()) {
             $args['menu'] = 'main-logged-in';
         } else {
             $args['menu'] = 'main';
+        }
         }
 
         return $args;
