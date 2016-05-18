@@ -20,7 +20,17 @@ class MNShortcodes
      * @example <code>[navionics gmap="true" pin="true"]</code> produces a combined Navionics and Google map with a draggable pin
      * @example <code>[navionics gmap="true" pin="true" lat="53.1" long="-4.4"]</code> produces a combined Navionics and Google map with a draggable pin, centred on given lat and long
      *
-     * @param array $attrs The shortcode attributes
+     * @param array $attrs The shortcode attributes.  Supported attributes:
+     *                      gmap - Set to true to use a combined Google Map / Navionics map (default false)
+     *                      pin - Set to true to add a draggable pin to the map (requires gmap to be true) (default false)
+     *                      lat - Set to the latitude of the centre of the map.  If lat or long are not specified, map will be centred on (0,0)
+     *                      long - Set to the longitude of the centre of the map.  If lat or long are not specified, map will be centred on (0,0)
+     *                      authorID - Only load pins from specified author ID.  If empty, load all pins (default empty)
+     *                      zoom - Show zoom controls (default true)
+     *                      units - Show units (default true)
+     *                      scale - Show scale (default true)
+     *                      fit - Zoom map to pins (default false)
+     *
      * @return string The content to inject
      */
     function navionicsMapShortcode($attrs)
@@ -29,6 +39,13 @@ class MNShortcodes
         $pin = false;
         $lat = false;
         $long = false;
+
+        $authorID = '';
+
+        $zoom = 'true';
+        $units = 'true';
+        $scale = 'true';
+        $fit = 'false';
 
         if (is_array($attrs)) {
             if (array_key_exists('gmap', $attrs) && $attrs['gmap'] == 'true') {
@@ -46,21 +63,30 @@ class MNShortcodes
             if (array_key_exists('long', $attrs)) {
                 $long = $attrs['long'];
             }
+
+            if (array_key_exists('authorid', $attrs)) {
+                $authorID = $attrs['authorid'];
+            }
+
+            if (array_key_exists('zoom', $attrs) && $attrs['zoom'] == 'false') {
+                $zoom = 'false';
+            }
+
+            if (array_key_exists('units', $attrs) && $attrs['units'] == 'false') {
+                $units = 'false';
+            }
+
+            if (array_key_exists('scale', $attrs) && $attrs['scale'] == 'false') {
+                $scale = 'false';
+            }
+
+            if (array_key_exists('fit', $attrs) && $attrs['fit'] == 'true') {
+                $fit = 'true';
+            }
         }
 
         if ($gmap) {
             $result = "
-                <style>
-                    #nautical-map-container {
-                        border: 1px solid gray;
-                        min-height: 500px;
-                        width: 100%;
-                        height: 100%;
-                        margin-top: 10px;
-                        margin-bottom: 10px;
-                    }
-                </style>
-
                 <div id='nautical-map-container' class='map'></div>
                 <script>
                     // Google Map Engine options";
@@ -292,7 +318,7 @@ class MNShortcodes
                         jQuery('#dms-seconds-long').change(function() {
                             dmsChanged();
                         });
-                        
+
                         dChanged();
                     });";
             }
@@ -304,57 +330,42 @@ class MNShortcodes
         } else {
             if ($lat && $long) {
                 $result = "
-                <style>
-                    #nautical-map-container {
-                        border: 1px solid gray;
-                        min-height: 500px;
-                        width: 100%;
-                        height: 100%;
-                        margin-top: 10px;
-                        margin-bottom: 10px;
-                    }
-                </style>
                 <div id='nautical-map-container'></div>
                 <script>
                     var webapi = new JNC.Views.BoatingNavionicsMap({
                         tagId: '#nautical-map-container',
                         center: [" . $long . "," . $lat . "],
                         zoom: 0,
-                        ZoomControl: true,
+                        ZoomControl: " . $zoom . ",
                         DistanceControl: false,
                         SonarControl: false,
                         LayerControl: false,
                         navKey: 'Navionics_webapi_01136'
                     });
-                    webapi.loadKml('/?feed=kml', false);
+                    webapi.loadKml('/?feed=kml" . ($authorID == "" ? "" : "&aID=" . $authorID) . "', " . $fit . ");
+                    webapi.showScaleLineControl(" . $scale . ");
+                    webapi.showDepthUnitControl(" . $units . ");
+                    webapi.showDistanceUnitControl(" . $units . ");
                 </script>";
             } else {
                 $result = "
-                <style>
-                    #nautical-map-container {
-                        border: 1px solid gray;
-                        min-height: 500px;
-                        width: 100%;
-                        height: 100%;
-                        margin-top: 10px;
-                        margin-bottom: 10px;
-                    }
-                </style>
                 <div id='nautical-map-container'></div>
                 <script>
                     var webapi = new JNC.Views.BoatingNavionicsMap({
                         tagId: '#nautical-map-container',
                         center: [12.0, 46.0],
                         zoom: 0,
-                        ZoomControl: true,
+                        ZoomControl: " . $zoom . ",
                         DistanceControl: false,
                         SonarControl: false,
                         LayerControl: false,
                         navKey: 'Navionics_webapi_01136'
                     });
-                    webapi.loadKml('/?feed=kml', false);
+                    webapi.loadKml('/?feed=kml" . ($authorID == "" ? "" : "&aID=" . $authorID) . "', " . $fit . ");
+                    webapi.showScaleLineControl(" . $scale . ");
+                    webapi.showDepthUnitControl(" . $units . ");
+                    webapi.showDistanceUnitControl(" . $units . ");
                 </script>";
-
             }
         }
 

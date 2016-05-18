@@ -28,6 +28,7 @@ require_once(MARINENOTICE_PATH . 'includes/class-mnpostmeta.php');
 require_once(MARINENOTICE_PATH . 'includes/class-mnposttypes.php');
 require_once(MARINENOTICE_PATH . 'includes/class-mnroles.php');
 require_once(MARINENOTICE_PATH . 'includes/class-mnkml.php');
+require_once(MARINENOTICE_PATH . 'includes/class-mnwidgetauthor.php');
 
 $osx = new MarineNotice();
 $osx->run(MARINENOTICE_PATH);

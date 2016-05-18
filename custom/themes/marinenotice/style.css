@@ -100,6 +100,20 @@ span.mnlogo {
     margin: 0 20px 10px 0;
 }
 
+/* Author archive page */
+.archive.author #main {
+    width: 62.5% ! important;
+}
+
+/* Sidebar */
+#sidebar img.avatar {
+    padding-bottom: 1em;
+}
+
+#sidebar div.profile-link {
+    padding-bottom: 3em ! important;
+}
+
 /* Featured images */
 img.attachment-post-thumbnail {
     float: right;
@@ -146,4 +160,12 @@ table.marker-key tr td:first-child {
     max-width: 2em ! important;
     width: 2em ! important;
     column-width: 2em ! important;
+}
+
+#nautical-map-container {
+    border: 1px solid gray;
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

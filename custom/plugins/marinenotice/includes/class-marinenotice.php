@@ -54,6 +54,7 @@ class MarineNotice
         add_action('save_post', array($this, 'savePost'));
         add_action('wp_before_admin_bar_render', array($this, 'beforeAdminBarRender'));
         add_action('wp_enqueue_scripts', array($this, 'enqueueScripts'));
+        add_action('widgets_init', array($this, 'widgetsInit'));
 
         // Filters
         add_filter('wp_nav_menu_args', array($this, 'navMenuArgs'));
@@ -175,5 +176,13 @@ class MarineNotice
     {
         $vars[] = 'aID';
         return $vars;
+    }
+
+    /**
+     * widgets_init action to register our widgets
+     */
+    function widgetsInit()
+    {
+        register_widget('MNAuthorWidget');
     }
 }
