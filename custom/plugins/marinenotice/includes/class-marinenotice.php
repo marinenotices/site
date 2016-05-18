@@ -171,7 +171,8 @@ class MarineNotice
      * @param array $vars The current query variables
      * @return array The modified query variables
      */
-    function queryVars($vars) {
+    function queryVars($vars)
+    {
         $vars[] = 'aID';
         return $vars;
     }

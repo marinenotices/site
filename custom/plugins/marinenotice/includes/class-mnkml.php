@@ -183,7 +183,7 @@ class MNKML {
         foreach ($posts as $post) {
             $data = get_post_meta($post->ID, "marinenotice-locations");
             $categories = get_the_terms($post, 'notice_category');
-            error_log(print_r($category), true);
+
             if (is_array($categories) && count($categories) > 0) {
                 $markerStyle = 'marker-' . $categories[0]->slug;
             } else {
