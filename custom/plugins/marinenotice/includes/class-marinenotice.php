@@ -59,6 +59,7 @@ class MarineNotice
         // Filters
         add_filter('wp_nav_menu_args', array($this, 'navMenuArgs'));
         add_filter('query_vars', array($this, 'queryVars'));
+        add_filter('embed_site_title_html', array($this, 'embedSiteTitleHTML'));
 
         // Shortcodes
         add_shortcode('navionics', array($this->mnShortcodes, 'navionicsMapShortcode'));
@@ -184,5 +185,24 @@ class MarineNotice
     function widgetsInit()
     {
         register_widget('MNAuthorWidget');
+    }
+
+    /**
+     * embed_site_title_html filter to change the title HTML for embeds (changes the site logo)
+     *
+     * @param type $site_title The site title
+     * @return string The modified site title
+     */
+    function embedSiteTitleHTML($site_title)
+    {
+        $new_site_title = sprintf(
+            '<a href="%s" target="_top"><img src="%s" srcset="%s 2x" width="32" height="32" alt="" class="wp-embed-site-icon"/><span>%s</span></a>',
+            esc_url( home_url() ),
+            esc_url( get_site_icon_url( 32, plugins_url('../images/logo-mini.svg', __FILE__ ) ) ),
+            esc_url( get_site_icon_url( 64, plugins_url('../images/logo-mini.svg', __FILE__ ) ) ),
+            esc_html( get_bloginfo( 'name' ) )
+        );
+
+        return '<div class="wp-embed-site-title">' . $new_site_title . '</div>';
     }
 }
