@@ -36,7 +36,7 @@ get_header(); ?>
 
                 <?php } elseif (is_author()) { ?>
                 <header class="archive-header">
-                	<h1><?php _e( 'Archive by Author', 'woothemes' ); ?></h1>
+                	<h1><?php _e( 'Notices', 'woothemes' ); ?> by <?php printf( esc_attr__( '%s', 'woothemes' ), get_the_author() ); ?></h1>
                 </header>
 
                 <?php } elseif (is_tag()) { ?>

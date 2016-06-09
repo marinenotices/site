@@ -39,7 +39,7 @@ class MNAuthorWidget extends WP_Widget
 				<?php endif; ?>
 			</div><!-- .post-entries -->
 
-            <h3 class="title">Author's Notices</h3>
+            <h3 class="title"><?php printf( esc_attr__( '%s', 'woothemes' ), get_the_author() ); ?> Map</h3>
             <div class="profile-map-content">
             <?php echo do_shortcode('[navionics authorID="' . get_the_author_meta( 'ID' ) . '" units="false" scale="false" fit="true"]'); ?>
             </div>
