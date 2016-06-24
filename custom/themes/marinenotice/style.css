@@ -162,6 +162,15 @@ table.marker-key tr td:first-child {
     column-width: 2em ! important;
 }
 
+article h1 img.marker {
+    width: 1em ! important;
+    max-width: 1em ! important;
+    padding-right: 0.5em;
+    vertical-align: middle;
+    margin: 0 ! important;
+}
+
+
 #nautical-map-container {
     border: 1px solid gray;
     width: 100%;

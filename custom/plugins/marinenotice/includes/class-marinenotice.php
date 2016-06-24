@@ -205,4 +205,63 @@ class MarineNotice
 
         return '<div class="wp-embed-site-title">' . $new_site_title . '</div>';
     }
+
+    /**
+     * Get the list of types of marine notice
+     *
+     * @return array An array of strings
+     */
+    static function getNoticeTypes() {
+        return array('buoy-new',
+            'buoy-missing',
+            'buoy-incorrect-position',
+            'buoy-moved',
+            'buoy-removed',
+            'buoy-temporary',
+            'wreck-moved',
+            'wreck-new',
+            'wreck-removed',
+            'light-new',
+            'light-changed',
+            'light-removed',
+            'light-inoperative',
+            'work-construction',
+            'work-demolition',
+            'work-underwater',
+            'work-dredging',
+            'other-misc',
+            'other-closed',
+            'other-event',
+            'other-warning');
+    }
+
+    /**
+     * Get the icon URL for a notice type
+     *
+     * @param string $noticeType The notice type
+     * @return string The URL
+     */
+    static function getNoticeIconURL($noticeType) {
+        if ($noticeType == 'buoy-incorrect-position') {
+            return plugins_url('../images/marker-buoy-moved.svg', __FILE__);
+        } else {
+            return plugins_url('../images/marker-' . $noticeType . '.svg', __FILE__);
+        }
+    }
+
+    /**
+     * Get the notice type from a post
+     *
+     * @param WP_Post $post A WP_Post object
+     * @return string The notice type
+     */
+    static function getNoticeTypeFromPost($post) {
+        $categories = get_the_terms($post, 'notice_category');
+
+        if (is_array($categories) && count($categories) > 0) {
+            return $categories[0]->slug;
+        } else {
+            return 'other-misc';
+        }
+    }
 }

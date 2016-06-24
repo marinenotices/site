@@ -30,9 +30,10 @@ global $woo_options;
                         $count++;
                         ?>
                         <article <?php post_class(); ?>>
+                            <?php $categories = get_the_terms($post, 'notice_category'); ?>
 
                             <header>
-                                <h1><?php the_title(); ?></h1>
+                                <h1><img class="marker alignnone" src="<?php echo MarineNotice::getNoticeIconURL(MarineNotice::getNoticeTypeFromPost($post)) ?>"><?php the_title(); ?></h1>
                             </header>
 
                             <section class="entry">
