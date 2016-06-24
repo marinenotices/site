@@ -42,6 +42,12 @@ global $woo_options;
                                     <?php the_post_thumbnail(); ?>
                                 <?php endif; ?>
 
+                                <?php $location = MNPostmeta::getLocationsFromPost($post, true); ?>
+                                <?php if ($location !== null): ?>
+                                    <p><strong>Latitude: <?php echo $location['lat']; ?></strong><br />
+                                    <strong>Longitude: <?php echo $location['long']; ?></strong></p>
+                                <?php endif; ?>
+
                                 <?php the_content(); ?>
 
                                 <?php wp_link_pages(array('before' => '<div class="page-link">' . __('Pages:', 'woothemes'), 'after' => '</div>')); ?>

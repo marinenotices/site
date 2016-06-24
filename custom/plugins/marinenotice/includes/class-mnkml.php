@@ -45,30 +45,29 @@ class MNKML {
         $posts = get_posts($args);
 
         foreach ($posts as $post) {
-            $data = get_post_meta($post->ID, "marinenotice-locations");
+            $locations = MNPostmeta::getLocationsFromPost($post);
+            if ($locations == null) {
+                continue;
+            }
 
-            if (isset($data[0])) {
-                $locations = unserialize($data[0]);
+            $index = 1;
+            $count = count($locations);
 
-                $index = 1;
-                $count = count($locations);
-
-                foreach ($locations as $location) {
-                    if ($location['lat'] == "" || $location['long'] == "") {
-                        continue;
-                    }
-
-                    $result .= "<Placemark>
-                            <name>" . $post->post_title . ($count > 1 ? " (" . $index . " of " . $count . ")" : "") . "</name>
-                            <description><![CDATA[For more information <a href='" . $post->guid . "'>click here</a>.  Source: <a href='" . get_author_posts_url($post->post_author, $author_nicename) . "'>" . get_the_author_meta("display_name", $post->post_author) . "</a>]]></description>
-                            <styleUrl>#marker-" . MarineNotice::getNoticeTypeFromPost($post) . "</styleUrl>
-                            <Point>
-                            <coordinates>" . $location['long'] . "," . $location['lat'] . "</coordinates>
-                            </Point>
-                        </Placemark>";
-
-                    $index++;
+            foreach ($locations as $location) {
+                if ($location['lat'] == "" || $location['long'] == "") {
+                    continue;
                 }
+
+                $result .= "<Placemark>
+                        <name>" . $post->post_title . ($count > 1 ? " (" . $index . " of " . $count . ")" : "") . "</name>
+                        <description><![CDATA[For more information <a href='" . $post->guid . "'>click here</a>.  Source: <a href='" . get_author_posts_url($post->post_author, $author_nicename) . "'>" . get_the_author_meta("display_name", $post->post_author) . "</a>]]></description>
+                        <styleUrl>#marker-" . MarineNotice::getNoticeTypeFromPost($post) . "</styleUrl>
+                        <Point>
+                        <coordinates>" . $location['long'] . "," . $location['lat'] . "</coordinates>
+                        </Point>
+                    </Placemark>";
+
+                $index++;
             }
         }
 
