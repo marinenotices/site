@@ -105,4 +105,41 @@ class MNPostmeta
 
         update_post_meta($post_id, "marinenotice-locations", serialize($locations));
     }
+
+    /**
+     * Get the location (lat / long) information from a post
+     *
+     * @param WP_Post $post The WP_Post object
+     * @param boolean $single If true, just return the first valid location, not all locations
+     * @return mixed Either an array containing a list of locations, each being an associative array, or if $single is
+     * false, a single location consisting of an associative array
+     */
+    static function getLocationsFromPost($post, $single = false) {
+        if (!$post) {
+            return null;
+        }
+
+        $data = get_post_meta($post->ID, "marinenotice-locations");
+
+        if (!isset($data[0])) {
+            return null;
+        }
+
+        $locations = unserialize($data[0]);
+
+        if (!is_array($locations)) {
+            return null;
+        }
+
+        if ($single) {
+            foreach ($locations as $location) {
+                if ($location['lat'] !== "" && $location['long'] !== "") {
+                    return $location;
+                }
+            }
+            return null;
+        } else {
+            return $locations;
+        }
+    }
 }
