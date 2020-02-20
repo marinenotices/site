@@ -1,24 +1,23 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "hash": "f22e9ec6fa7ec3b9cf0c141ac6262ab8",
-    "content-hash": "1f148e3de1da7f32995403f955e65ef4",
+    "content-hash": "91c19e11ed5dfaff59914f16064e7d3d",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.0.25",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e"
+                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
-                "reference": "36e5b5843203d7f1cf6ffb0305a97e014387bd8e",
+                "url": "https://api.github.com/repos/composer/installers/zipball/7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
+                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +29,7 @@
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
+                "phpunit/phpunit": "^4.8.36"
             },
             "type": "composer-plugin",
             "extra": {
@@ -60,52 +59,76 @@
             "keywords": [
                 "Craft",
                 "Dolibarr",
+                "Eliasis",
                 "Hurad",
                 "ImageCMS",
+                "Kanboard",
+                "Lan Management System",
                 "MODX Evo",
+                "MantisBT",
                 "Mautic",
+                "Maya",
                 "OXID",
+                "Plentymarkets",
+                "Porto",
+                "RadPHP",
                 "SMF",
                 "Thelia",
+                "Whmcs",
                 "WolfCMS",
                 "agl",
                 "aimeos",
                 "annotatecms",
+                "attogram",
                 "bitrix",
                 "cakephp",
                 "chef",
+                "cockpit",
                 "codeigniter",
                 "concrete5",
                 "croogo",
                 "dokuwiki",
                 "drupal",
+                "eZ Platform",
                 "elgg",
+                "expressionengine",
                 "fuelphp",
                 "grav",
                 "installer",
+                "itop",
                 "joomla",
+                "known",
                 "kohana",
                 "laravel",
+                "lavalite",
                 "lithium",
                 "magento",
+                "majima",
                 "mako",
                 "mediawiki",
                 "modulework",
+                "modx",
                 "moodle",
+                "osclass",
                 "phpbb",
                 "piwik",
                 "ppi",
                 "puppet",
+                "pxcms",
+                "reindex",
                 "roundcube",
                 "shopware",
                 "silverstripe",
+                "sydes",
+                "sylius",
                 "symfony",
                 "typo3",
                 "wordpress",
+                "yawik",
                 "zend",
                 "zikula"
             ],
-            "time": "2016-04-13 19:46:30"
+            "time": "2020-02-07T10:39:20+00:00"
         },
         {
             "name": "psycle-wordpress-plugins/mail-options",
@@ -126,7 +149,7 @@
             },
             "type": "wordpress-muplugin",
             "notification-url": "https://packagist.org/downloads/",
-            "time": "2015-10-19 15:02:25"
+            "time": "2015-10-19T15:02:25+00:00"
         },
         {
             "name": "psycle-wordpress-plugins/psycle-pii-scrub",
@@ -154,7 +177,7 @@
                 }
             ],
             "description": "WP_CLI command to scrub PII data from a WordPress database. Calling 'wp pii-scrub' will automatically detect major plugins (BuddyPress, WooCommerce) and scrub/replace any PII (personal information) so that a database compromise doesn't cause issues. Additional custom meta data to check/scrub can be defined at runtime.",
-            "time": "2016-04-05 10:35:07"
+            "time": "2016-04-05T10:35:07+00:00"
         },
         {
             "name": "psycle-wordpress/wordpress",
@@ -199,7 +222,7 @@
                 }
             ],
             "description": "Package to build WordPress with Composer installation plugin",
-            "time": "2016-04-05 11:23:32"
+            "time": "2016-04-05T11:23:32+00:00"
         },
         {
             "name": "psycle-wordpress/wordpress-core-installer",
@@ -251,31 +274,29 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2016-02-19 10:51:45"
+            "time": "2016-02-19T10:51:45+00:00"
         },
         {
             "name": "wordpress/wordpress",
-            "version": "4.5.2",
+            "version": "5.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "4.5.2"
+                "reference": "5.3.2"
             },
             "type": "wordpress-core"
         },
         {
             "name": "wpackagist-plugin/cookie-notice",
-            "version": "1.2.35",
+            "version": "1.2.50",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cookie-notice/",
-                "reference": "tags/1.2.35"
+                "reference": "tags/1.2.50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cookie-notice.1.2.35.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/cookie-notice.1.2.50.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -285,17 +306,15 @@
         },
         {
             "name": "wpackagist-plugin/post-expirator",
-            "version": "2.1.4",
+            "version": "2.4.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/post-expirator/",
-                "reference": "tags/2.1.4"
+                "reference": "tags/2.4.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/post-expirator.2.1.4.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/post-expirator.2.4.0.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -305,17 +324,15 @@
         },
         {
             "name": "wpackagist-plugin/svg-support",
-            "version": "2.2.3.2",
+            "version": "2.3.17",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/svg-support/",
-                "reference": "tags/2.2.3.2"
+                "reference": "tags/2.3.17"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/svg-support.2.2.3.2.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/svg-support.2.3.17.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -325,17 +342,15 @@
         },
         {
             "name": "wpackagist-plugin/theme-my-login",
-            "version": "6.4.5",
+            "version": "7.0.15",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/theme-my-login/",
-                "reference": "tags/6.4.5"
+                "reference": "tags/7.0.15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/theme-my-login.6.4.5.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/theme-my-login.7.0.15.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -345,17 +360,15 @@
         },
         {
             "name": "wpackagist-plugin/tinymce-advanced",
-            "version": "4.3.10.1",
+            "version": "5.3.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/tinymce-advanced/",
-                "reference": "tags/4.3.10.1"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.4.3.10.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.zip?timestamp=1581309812"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -365,17 +378,15 @@
         },
         {
             "name": "wpackagist-plugin/w3-total-cache",
-            "version": "0.9.4.1",
+            "version": "0.13.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/w3-total-cache/",
-                "reference": "tags/0.9.4.1"
+                "reference": "tags/0.13.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.9.4.1.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/w3-total-cache.0.13.1.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -385,7 +396,7 @@
         },
         {
             "name": "wpackagist-plugin/wp-user-avatar",
-            "version": "2.0.7",
+            "version": "2.2.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-user-avatar/",
@@ -393,9 +404,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-user-avatar.zip",
-                "reference": null,
-                "shasum": null
+                "url": "https://downloads.wordpress.org/plugin/wp-user-avatar.zip?timestamp=1582179444"
             },
             "require": {
                 "composer/installers": "~1.0"

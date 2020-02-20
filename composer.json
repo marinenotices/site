@@ -1,15 +1,15 @@
 {
-  "name": "marinenotice.net",
+  "name": "austingoudge/marinenotice",
   "description": "marinenotice.net configuration.",
   "require": {
     "psycle-wordpress/wordpress": "*",
     "wpackagist-plugin/w3-total-cache": "*",
-    "wpackagist-plugin/theme-my-login": "6.4.5",
-    "wpackagist-plugin/wp-user-avatar": "2.0.7",
-    "wpackagist-plugin/tinymce-advanced": "4.3.10.1"
-    "wpackagist-plugin/svg-support": "2.2.3.2",
-    "wpackagist-plugin/tinymce-advanced": "4.3.10.1",
-    "wpackagist-plugin/cookie-notice": "1.2.35"
+    "wpackagist-plugin/theme-my-login": "7.0.15",
+    "wpackagist-plugin/wp-user-avatar": "2.2.5",
+    "wpackagist-plugin/svg-support": "2.3.17",
+    "wpackagist-plugin/post-expirator": "2.4.0.1",
+    "wpackagist-plugin/tinymce-advanced": "5.3.0",
+    "wpackagist-plugin/cookie-notice": "1.2.50"
   },
   "extra": {
     "installer-paths": {
@@ -41,11 +41,11 @@
       "package": {
         "name": "wordpress/wordpress",
         "type": "wordpress-core",
-        "version": "4.5.2",
+        "version": "5.3.2",
         "source": {
           "type": "git",
           "url": "https://github.com/WordPress/WordPress.git",
-          "reference": "4.5.2"
+          "reference": "5.3.2"
         }
       }
     }
